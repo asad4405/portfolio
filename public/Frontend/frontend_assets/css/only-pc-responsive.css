@@ -1,0 +1,12 @@
+/* Hover effect for desktop */
+@media (min-width: 992px) {
+    .nav-link:hover {
+        color: #A970FF !important;
+        border-bottom: 2px solid #A970FF;
+    }
+
+    /* Show submenu on hover */
+    .nav-item.dropdown:hover .dropdown-menu {
+        display: block;
+    }
+}
