@@ -110,5 +110,29 @@
                 </div>
             </div>
         </div>
+
+        <!-- counter section -->
+        <div class="py-3 counter-section">
+            <div class="container">
+                <div class="text-center row">
+                    <div class="col-6 col-md-3">
+                        <h2 class="counter" data-target="14"></h2>
+                        <p class="text-white">Years of Experience</p>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <h2 class="counter" data-target="50"></h2>
+                        <p class="text-white">Projects Completed</p>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <h2 class="counter" data-target="1000"></h2>
+                        <p class="text-white">Happy Clients</p>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <h2 class="counter" data-target="14"></h2>
+                        <p class="text-white">Years of Experience</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 @endsection

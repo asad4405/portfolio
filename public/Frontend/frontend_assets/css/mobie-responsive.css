@@ -28,4 +28,9 @@
         justify-content: center;
         margin: 20px !important;
     }
+
+    /* counter */
+    .counter {
+        font-size: 30px;
+    }
 }

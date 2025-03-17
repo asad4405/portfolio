@@ -10,6 +10,7 @@ Route::get('/', function () {
 
 Route::get('/',[FrontendController::class,'index'])->name('index');
 
+// https: //themejunction.net/tailwind/gerold/demo/index-light.html // portfolio design
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
