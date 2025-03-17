@@ -6,7 +6,7 @@
         <nav class="navbar navbar-expand-lg desktop-menu">
             <div class="container">
                 <!-- Logo -->
-                <a class="navbar-brand" href="#">
+                <a class="navbar-brand desktop-navbar-brand" href="#">
                     <img src="{{ asset('Frontend/frontend_assets/images/logo.png') }}" alt="Logo">
                 </a>
 
@@ -55,7 +55,7 @@
             <div class="offcanvas-body">
                 <ul class="navbar-nav">
                     <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#aboutUs">About</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">Services</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">Portfolios</a></li>
                     <!-- Collapsible Blog Submenu -->
@@ -130,6 +130,67 @@
                     <div class="col-6 col-md-3">
                         <h2 class="counter" data-target="14"></h2>
                         <p class="text-white">Years of Experience</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =========== about us section =============== -->
+    <section id="aboutUs">
+        <div class="container mt-5">
+            <div class="about-me">
+                <h2 class="text-center section-title">ABOUT US</h2>
+                <div class="about-line"></div>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="about-image">
+                            <img src="{{ asset('Frontend/frontend_assets/images/about-banner.jpg') }}" alt="">
+                        </div>
+                    </div>
+                    <div class="about-text">
+                        <h3>I am <span>Md. Asaduzzaman</span></h3>
+                        <h5>Software Developer</h5>
+                        <hr>
+                        <p>I'm a Professional Software Developer.
+                            I have 1 year+ work experience.
+                            I make top-quality websites. User-friendly and responsive custom websites. Skills:- HTML5, CSS3,
+                            Bootstrap, JavaScript, jQuery, ajax, PHP, Laravel, MySQL. I always give a chance to my clients
+                            to prove my best. Please feel
+                            free to contact me anytime.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center education-experience">
+                <h2 class="section-title">EDUCATION & EXPERIENCE</h2>
+                <div class="exp-line"></div>
+                <div class="row">
+                    <div class="col-12 col-md-12 col-lg-6">
+                        <div class="highlight">Education</div>
+                        <div class="edu-exp-box">
+                            <p><strong>(2019 - 2020)</strong></p>
+                            <h5>Web Designer</h5>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        </div>
+                        <div class="edu-exp-box">
+                            <p><strong>(2020 - 2021)</strong></p>
+                            <h5>Web Developer</h5>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-12 col-lg-6">
+                        <div class="highlight mobile_highlight">Experience</div>
+                        <div class="edu-exp-box">
+                            <p><strong>(2019 - 2020)</strong></p>
+                            <h5>Front-End Developer</h5>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        </div>
+                        <div class="edu-exp-box">
+                            <p><strong>(2020 - 2021)</strong></p>
+                            <h5>Back-End Developer</h5>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        </div>
                     </div>
                 </div>
             </div>

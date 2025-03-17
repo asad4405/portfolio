@@ -33,4 +33,45 @@
     .counter {
         font-size: 30px;
     }
+
+    /* about */
+    .about-me{
+        margin-top: -50px;
+    }
+
+    .section-title{
+        font-size: 20px;
+        margin-bottom: -8px;
+    }
+
+    .about-line {
+        width: 130px;
+        margin: 16px auto;
+    }
+
+    .about-image img{
+        height: 100%;
+    }
+
+    .about-text h3 {
+        font-size: 22px;
+    }
+
+    .exp-line {
+        width: 315px;
+    }
+
+    .highlight {
+        padding: 12px;
+    }
+    .mobile_highlight{
+        margin-top: 15px;
+    }
+    .edu-exp-box h5 {
+        font-size: 20px;
+    }
+
+    .edu-exp-box p {
+        font-size: 14px;
+    }
 }
