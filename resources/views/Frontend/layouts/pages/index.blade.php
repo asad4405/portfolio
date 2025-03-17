@@ -76,4 +76,39 @@
             </div>
         </div>
     </section>
+
+    <!-- ============== banner section =============== -->
+    <section>
+        <div class="container">
+            <div class="row hero-section">
+                <!-- Left Side: Text -->
+                <div class="col-lg-6 col-md-12 d-flex flex-column justify-content-center hero-text">
+                    <h1>I am Md. Asaduzzaman</h1>
+                    <h2>Full-stack Web Developer.</h2>
+                    <p>I break down complex user experience problems to create integrity-focused solutions that connect
+                        billions of people.</p>
+                    <div class="row">
+                        <div class="col-12 col-lg-4">
+                            <button class="mt-3 btn btn-custom">
+                                Download CV <i class="fa-solid fa-download"></i>
+                            </button>
+                        </div>
+                        <div class="col-12 col-lg-8">
+                            <div class="mt-4 social-icons">
+                                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                                <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                                <a href="#"><i class="fa-brands fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Side: Image -->
+                <div class="text-center col-lg-6 col-md-12 hero-image">
+                    <img src="{{ asset('Frontend/frontend_assets/images/banner-img.jpg') }}" alt="Profile Image">
+                </div>
+            </div>
+        </div>
+    </section>
 @endsection
