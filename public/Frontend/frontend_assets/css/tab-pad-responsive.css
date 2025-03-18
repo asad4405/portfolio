@@ -2,6 +2,9 @@
     .desktop-navbar-brand{
         display: none;
     }
+    .hero-section {
+        min-height: 40vh;
+    }
     .hero-text h1 {
         font-size: 37px;
     }
@@ -68,5 +71,19 @@
 
     .about-image img {
         height: 100%;
+    }
+
+    /* ========= contact =========== */
+    .contact-line {
+        width: 250px;
+    }
+
+    .contact-btn-custom {
+        font-size: 18px;
+        padding: 12px 35px;
+    }
+
+    .contact-section h2 {
+        font-size: 35px;
     }
 }
