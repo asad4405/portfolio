@@ -75,6 +75,10 @@
         font-size: 14px;
     }
 
+    .edu-exp-box p i {
+        font-size: 20px;
+    }
+
     /* =========== contact ============= */
     .contact-line {
         width: 175px;

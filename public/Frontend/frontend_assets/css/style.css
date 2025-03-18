@@ -144,6 +144,7 @@
     font-size: 35px;
     font-weight: bold;
     margin: 20px 0;
+    text-align: center;
 }
 
 .about-line {
@@ -190,21 +191,34 @@
     font-weight: bold;
     font-size: 20px;
     border-radius: 5px;
+    text-align: center;
 }
-.edu-exp-box h5{
-    color: #000;
-    font-size: 22px;
-}
-.edu-exp-box p{
-    color: #000;
-    font-size: 16px;
-}
-
 .edu-exp-box {
-    background: #e9ecef;
+    color: #fff;
     padding: 15px;
     border-radius: 5px;
     margin-top: 15px;
+    border: 2px solid #7545D8;
+}
+
+.edu-exp-box h5{
+    font-size: 22px;
+    margin-left: 20px;
+}
+
+.edu-exp-box p{
+    font-size: 20px;
+    margin-left: 20px;
+}
+
+.edu-exp-box p i{
+    font-size: 25px;
+}
+
+.edu-exp-box:hover {
+    background-color: #A970FF;
+    border: 2px solid #fff;
+    transition: 0.6s ease-in-out;
 }
 
 /* =========== contact us ============= */
@@ -251,17 +265,23 @@
      border-radius: 50%
  }
 
- .form-control,
- .form-select {
+ .contact-us-form .form-control,
+ .contact-us-form .form-select {
      background-color: #050709;
      color: white;
      border: 1px solid #050709;
  }
 
- .form-control:focus,
- .form-select:focus {
+ .contact-us-form .form-control:focus,
+ .contact-us-form .form-select:focus {
      border-color: #9333ea;
      box-shadow: 0 0 4px #9333ea;
      background-color: #050709;
      color: white;
+ }
+ .contact-us-form .form-control::placeholder,
+ .contact-us-form .form-select::placeholder,
+ textarea::placeholder {
+    color: #888;
+    opacity: 1;
  }

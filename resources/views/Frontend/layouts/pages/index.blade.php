@@ -16,7 +16,7 @@
                         <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
                         <li class="nav-item"><a class="nav-link" href="#">About</a></li>
                         <li class="nav-item"><a class="nav-link" href="#">Services</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#">Portfolios</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Portfolio</a></li>
                         <!-- Blog Dropdown (Hover) -->
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#">Blog</a>
@@ -162,7 +162,7 @@
                 </div>
             </div>
 
-            <div class="text-center education-experience">
+            <div class="education-experience">
                 <h2 class="section-title">EDUCATION & EXPERIENCE</h2>
                 <div class="exp-line"></div>
                 <div class="row">
@@ -174,7 +174,7 @@
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
                         </div>
                         <div class="edu-exp-box">
-                            <p><strong>(2020 - 2021)</strong></p>
+                            <p><strong>(2019 - 2020)</strong></p>
                             <h5>Web Developer</h5>
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
                         </div>
@@ -182,12 +182,12 @@
                     <div class="col-12 col-md-12 col-lg-6">
                         <div class="highlight mobile_highlight">Experience</div>
                         <div class="edu-exp-box">
-                            <p><strong>(2019 - 2020)</strong></p>
+                            <p><i class="fa-solid fa-code"></i></p>
                             <h5>Front-End Developer</h5>
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
                         </div>
                         <div class="edu-exp-box">
-                            <p><strong>(2020 - 2021)</strong></p>
+                            <p><i class="fa-solid fa-code"></i></p>
                             <h5>Back-End Developer</h5>
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
                         </div>
@@ -209,7 +209,7 @@
                     <h2>Let's work together!</h2>
                     <p>I design and code beautifully simple things and I love what I do. Just simple like that!</p>
                     <form>
-                        <div class="row g-3">
+                        <div class="row g-3 contact-us-form">
                             <div class="col-md-6">
                                 <input type="text" class="form-control" placeholder="First name">
                             </div>

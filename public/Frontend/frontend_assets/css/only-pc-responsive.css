@@ -1,8 +1,22 @@
 /* Hover effect for desktop */
 @media (min-width: 992px) {
-    .nav-link:hover {
-        color: #A970FF !important;
-        border-bottom: 2px solid #A970FF;
+    .navbar-nav .nav-link{
+        position: relative;
+    }
+
+    .navbar-nav .nav-link::after {
+        content: '';
+        width: 0;
+        height: 3px;
+        background: #A970FF;
+        position: absolute;
+        left: 0;
+        bottom: -4px;
+        transition: 0.6s;
+    }
+
+    .navbar-nav .nav-link:hover::after {
+        width: 100%;
     }
 
     /* Show submenu on hover */
