@@ -7,7 +7,7 @@
             <div class="container">
                 <!-- Logo -->
                 <a class="navbar-brand desktop-navbar-brand" href="#">
-                    <img src="{{ asset('Frontend/frontend_assets/images/logo.png') }}" alt="Logo">
+                    <img src="{{ asset('public/Frontend/frontend_assets/images/logo.png') }}" alt="Logo">
                 </a>
 
                 <!-- Navigation Items -->
@@ -36,7 +36,7 @@
         <nav class="navbar d-lg-none">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#">
-                    <img src="{{ asset('Frontend/frontend_assets/images/logo.png') }}" alt="Logo">
+                    <img src="{{ asset('public/Frontend/frontend_assets/images/logo.png') }}" alt="Logo">
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu">
                     <i class="fa-solid fa-bars-staggered"></i>
@@ -48,7 +48,7 @@
         <div class="offcanvas offcanvas-start d-lg-none" id="mobileMenu">
             <div class="offcanvas-header">
                 <a class="navbar-brand" href="#">
-                    <img src="{{ asset('Frontend/frontend_assets/images/logo.png') }}" alt="Logo">
+                    <img src="{{ asset('public/Frontend/frontend_assets/images/logo.png') }}" alt="Logo">
                 </a>
                 <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"></button>
             </div>
@@ -106,7 +106,7 @@
 
                 <!-- Right Side: Image -->
                 <div class="text-center col-lg-6 col-md-12 hero-image">
-                    <img src="{{ asset('Frontend/frontend_assets/images/banner-img.jpg') }}" alt="Profile Image">
+                    <img src="{{ asset('public/Frontend/frontend_assets/images/banner-img.jpg') }}" alt="Profile Image">
                 </div>
             </div>
         </div>
@@ -145,7 +145,7 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="about-image">
-                            <img src="{{ asset('Frontend/frontend_assets/images/about-banner.jpg') }}" alt="">
+                            <img src="{{ asset('public/Frontend/frontend_assets/images/about-banner.jpg') }}" alt="">
                         </div>
                     </div>
                     <div class="about-text">
