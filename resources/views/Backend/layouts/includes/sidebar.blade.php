@@ -47,8 +47,7 @@
                 <div class="custom-control custom-radio custom-control-inline">
                     <input type="radio" id="sidebariconlist-1" name="menu-list-icon" class="custom-control-input"
                         value="icon-list-style-1" checked="" />
-                    <label class="custom-control-label" for="sidebariconlist-1"><i
-                            class="ion-minus-round"></i></label>
+                    <label class="custom-control-label" for="sidebariconlist-1"><i class="ion-minus-round"></i></label>
                 </div>
                 <div class="custom-control custom-radio custom-control-inline">
                     <input type="radio" id="sidebariconlist-2" name="menu-list-icon" class="custom-control-input"
@@ -94,8 +93,8 @@
         <a href="index.html">
             <img src="{{ asset('public/Backend/backend_asset/vendors') }}/images/deskapp-logo.svg" alt=""
                 class="dark-logo" />
-            <img src="{{ asset('public/Backend/backend_asset/vendors') }}/images/deskapp-logo-white.svg" alt=""
-                class="light-logo" />
+            <img src="{{ asset('public/Backend/backend_asset/vendors') }}/images/deskapp-logo-white.svg"
+                alt="" class="light-logo" />
         </a>
         <div class="close-sidebar" data-toggle="left-sidebar-close">
             <i class="ion-close-round"></i>
@@ -105,13 +104,16 @@
         <div class="sidebar-menu">
             <ul id="accordion-menu">
                 <li class="dropdown">
+                    <a href="{{ route('dashboard') }}" class="dropdown-toggle">
+                        <span class="micon bi bi-house"></span><span class="mtext">Dashboard</span>
+                    </a>
+                </li>
+                <li class="dropdown">
                     <a href="javascript:;" class="dropdown-toggle">
-                        <span class="micon bi bi-house"></span><span class="mtext">Home</span>
+                        <span class="micon bi bi-card-image"></span><span class="mtext">Hero/Banner</span>
                     </a>
                     <ul class="submenu">
-                        <li><a href="index.html">Dashboard style 1</a></li>
-                        <li><a href="index2.html">Dashboard style 2</a></li>
-                        <li><a href="index3.html">Dashboard style 3</a></li>
+                        <li><a href="{{ route('admin.banner.edit',App\Models\Banner::first()->id) }}">Edit Banner</a></li>
                     </ul>
                 </li>
                 <li class="dropdown">
