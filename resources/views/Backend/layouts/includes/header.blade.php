@@ -13,9 +13,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet" />
     <!-- CSS -->
-    <link rel="stylesheet" type="text/css" href="{{ asset('Backend/backend_asset/vendors') }}/styles/core.css" />
-    <link rel="stylesheet" type="text/css"href="{{ asset('Backend/backend_asset/vendors') }}/styles/icon-font.min.css" />
-    <link rel="stylesheet" type="text/css" href="{{ asset('Backend/backend_asset/vendors') }}/styles/style.css" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('public/Backend/backend_asset/vendors') }}/styles/core.css" />
+    <link rel="stylesheet" type="text/css"href="{{ asset('public/Backend/backend_asset/vendors') }}/styles/icon-font.min.css" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('public/Backend/backend_asset/vendors') }}/styles/style.css" />
 </head>
 
 <body>
@@ -80,7 +80,7 @@
                             <ul>
                                 <li>
                                     <a href="#">
-                                        <img src="{{ asset('Backend/backend_asset/vendors') }}/images/img.jpg"
+                                        <img src="{{ asset('public/Backend/backend_asset/vendors') }}/images/img.jpg"
                                             alt="" />
                                         <h3>John Doe</h3>
                                         <p>
@@ -91,7 +91,7 @@
                                 </li>
                                 <li>
                                     <a href="#">
-                                        <img src="{{ asset('Backend/backend_asset/vendors') }}/images/photo1.jpg"
+                                        <img src="{{ asset('public/Backend/backend_asset/vendors') }}/images/photo1.jpg"
                                             alt="" />
                                         <h3>Lea R. Frith</h3>
                                         <p>
@@ -102,7 +102,7 @@
                                 </li>
                                 <li>
                                     <a href="#">
-                                        <img src="{{ asset('Backend/backend_asset/vendors') }}/images/photo2.jpg"
+                                        <img src="{{ asset('public/Backend/backend_asset/vendors') }}/images/photo2.jpg"
                                             alt="" />
                                         <h3>Erik L. Richards</h3>
                                         <p>
@@ -113,7 +113,7 @@
                                 </li>
                                 <li>
                                     <a href="#">
-                                        <img src="{{ asset('Backend/backend_asset/vendors') }}/images/photo3.jpg"
+                                        <img src="{{ asset('public/Backend/backend_asset/vendors') }}/images/photo3.jpg"
                                             alt="" />
                                         <h3>John Doe</h3>
                                         <p>
@@ -124,7 +124,7 @@
                                 </li>
                                 <li>
                                     <a href="#">
-                                        <img src="{{ asset('Backend/backend_asset/vendors') }}/images/photo4.jpg"
+                                        <img src="{{ asset('public/Backend/backend_asset/vendors') }}/images/photo4.jpg"
                                             alt="" />
                                         <h3>Renee I. Hansen</h3>
                                         <p>
@@ -135,7 +135,7 @@
                                 </li>
                                 <li>
                                     <a href="#">
-                                        <img src="{{ asset('Backend/backend_asset/vendors') }}/images/img.jpg"
+                                        <img src="{{ asset('public/Backend/backend_asset/vendors') }}/images/img.jpg"
                                             alt="" />
                                         <h3>Vicki M. Coleman</h3>
                                         <p>
@@ -153,15 +153,19 @@
                 <div class="dropdown">
                     <a class="dropdown-toggle" href="#" role="button" data-toggle="dropdown">
                         <span class="user-icon">
-                            <img src="{{ asset('Backend/backend_asset/vendors') }}/images/photo1.jpg" alt="" />
+                            <img src="{{ asset('public/Backend/backend_asset/vendors') }}/images/photo1.jpg" alt="" />
                         </span>
-                        <span class="user-name">Ross C. Lopez</span>
+                        <span class="user-name">{{ Auth::user()->name }}</span>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
                         <a class="dropdown-item" href="profile.html"><i class="dw dw-user1"></i> Profile</a>
                         <a class="dropdown-item" href="profile.html"><i class="dw dw-settings2"></i> Setting</a>
                         <a class="dropdown-item" href="faq.html"><i class="dw dw-help"></i> Help</a>
-                        <a class="dropdown-item" href="login.html"><i class="dw dw-logout"></i> Log Out</a>
+                        <form method="POST" action="{{ route('logout') }}">
+                            @csrf
+                            <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                this.closest('form').submit();"><i class="dw dw-logout"></i> Log Out</a>
+                        </form>
                     </div>
                 </div>
             </div>
