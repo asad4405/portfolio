@@ -9,6 +9,7 @@ Route::get('/', function () {
 });
 
 Route::get('/',[FrontendController::class,'index'])->name('index');
+Route::get('blog-details/{slug}',[FrontendController::class,'blog_details'])->name('blog.details');
 
 // https: //themejunction.net/tailwind/gerold/demo/index-light.html // portfolio design
 

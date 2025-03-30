@@ -1,82 +1,5 @@
 @extends('Frontend.layouts.master')
 @section('maincontent')
-    <!-- ================= Navbar ======================= -->
-    <section>
-        <!-- Navbar (Desktop) -->
-        <nav class="navbar navbar-expand-lg desktop-menu">
-            <div class="container">
-                <!-- Logo -->
-                <a class="navbar-brand desktop-navbar-brand" href="#">
-                    <img src="{{ asset('public/Frontend/frontend_assets/images/logo.png') }}" alt="Logo">
-                </a>
-
-                <!-- Navigation Items -->
-                <div class="collapse navbar-collapse justify-content-end">
-                    <ul class="navbar-nav">
-                        <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#">About</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#">Services</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#">Portfolio</a></li>
-                        <!-- Blog Dropdown (Hover) -->
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#">Blog</a>
-                            <ul class="dropdown-menu navbar-submenu">
-                                <li><a class="dropdown-item" href="#">Latest Posts</a></li>
-                                <li><a class="dropdown-item" href="#">Trending</a></li>
-                                <li><a class="dropdown-item" href="#">Categories</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-
-        <!-- Navbar (Mobile) -->
-        <nav class="navbar d-lg-none">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#">
-                    <img src="{{ asset('public/Frontend/frontend_assets/images/logo.png') }}" alt="Logo">
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu">
-                    <i class="fa-solid fa-bars-staggered"></i>
-                </button>
-            </div>
-        </nav>
-
-        <!-- Offcanvas Drawer (Mobile) -->
-        <div class="offcanvas offcanvas-start d-lg-none" id="mobileMenu">
-            <div class="offcanvas-header">
-                <a class="navbar-brand" href="#">
-                    <img src="{{ asset('public/Frontend/frontend_assets/images/logo.png') }}" alt="Logo">
-                </a>
-                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"></button>
-            </div>
-            <div class="offcanvas-body">
-                <ul class="navbar-nav">
-                    <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#aboutUs">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Services</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Portfolios</a></li>
-                    <!-- Collapsible Blog Submenu -->
-                    <li class="nav-item">
-                        <a class="nav-link" data-bs-toggle="collapse" href="#blogSubmenu" role="button">
-                            Blog ⬇
-                        </a>
-                        <div class="collapse" id="blogSubmenu">
-                            <ul class="navbar-nav ps-3">
-                                <li class="nav-item"><a class="nav-link" href="#">Latest Posts</a></li>
-                                <li class="nav-item"><a class="nav-link" href="#">Trending</a></li>
-                                <li class="nav-item"><a class="nav-link" href="#">Categories</a></li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
     <!-- ============== banner section =============== -->
     <section>
         <div class="container">
@@ -197,6 +120,33 @@
         </div>
     </section>
 
+    <!-- ======================== Blog ======================= -->
+    <section>
+        <div class="container py-4">
+            <div class="contact-heading">
+                <h2 class="text-center section-title">RECENT BLOGS</h2>
+                <div class="recent-blog-line"></div>
+            </div>
+            <div class="row g-4">
+                @foreach ($blogs as $blog)
+                    <div class="col-md-4">
+                        <a href="{{ route('blog.details',$blog->slug) }}">
+                            <div class="blog-card">
+                                <span class="tag">{{ $blog->blogcategory->category_name }}</span>
+                                <img src="{{ asset($blog->thumb_img) }}" alt="Blog 1">
+                                <div class="overlay">
+                                    <small>📅 {{ $blog->date }} </small>
+                                    {{-- <small>📅 Oct 01, 2022 </small> --}}
+                                    <h5>{{ $blog->title }}</h5>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                @endforeach
+            </div>
+        </div>
+    </section>
+
     <!-- ==================== contact us ===================== -->
     <section>
         <div class="container mt-5">
@@ -205,7 +155,7 @@
                 <div class="contact-line"></div>
             </div>
             <div class="row g-4">
-                <div class="col-lg-6 col-md-6 contact-section">
+                <div class="col-lg-6 col-md-6 col-sm-12 contact-section">
                     <h2>Let's work together!</h2>
                     <p>I design and code beautifully simple things and I love what I do. Just simple like that!</p>
                     <form>
@@ -231,8 +181,8 @@
                         </div>
                     </form>
                 </div>
-                <div class="col-lg-1"></div>
-                <div class="col-lg-5 col-md-6 d-flex flex-column justify-content-center text-light contact-info">
+                {{-- <div class="col-lg-1 "></div> --}}
+                {{-- <div class="col-lg-5 col-md-6 col-sm-12 d-flex flex-column justify-content-center text-light contact-info">
                     <div class="mb-4 d-flex align-items-center">
                         <i class="fas fa-phone"></i>
                         <div>
@@ -254,7 +204,7 @@
                             <p>Warne Park Street Pine, FL 33157, New York</p>
                         </div>
                     </div>
-                </div>
+                </div> --}}
             </div>
         </div>
     </section>

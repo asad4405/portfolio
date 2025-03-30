@@ -68,7 +68,18 @@
     .about-image img {
         height: 100%;
     }
+    /* ========= recent bolg ========= */
+    .recent-blog-line {
+        width: 290px;
+    }
 
+    .blog-card .overlay {
+        padding: 5px;
+    }
+
+    .highlight {
+        margin-top: 12px;
+    }
     /* ========= contact =========== */
     .contact-line {
         width: 250px;

@@ -78,6 +78,10 @@
     .edu-exp-box p i {
         font-size: 20px;
     }
+    /* ========== recent view ========== */
+    .recent-blog-line {
+        width: 210px;
+    }
 
     /* =========== contact ============= */
     .contact-line {
@@ -90,5 +94,11 @@
 
     .contact-info {
         margin-left: 30px;
+    }
+
+    /* ============= blog details ============= */
+    .sidebar{
+        margin-top: 20px;
+        padding: 12px;
     }
 }
