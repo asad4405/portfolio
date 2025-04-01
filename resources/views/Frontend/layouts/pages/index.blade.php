@@ -130,7 +130,7 @@
             <div class="row g-4">
                 @foreach ($blogs as $blog)
                     <div class="col-md-4">
-                        <a href="{{ route('blog.details',$blog->slug) }}">
+                        <a href="{{ route('blog.details', $blog->slug) }}">
                             <div class="blog-card">
                                 <span class="tag">{{ $blog->blogcategory->category_name }}</span>
                                 <img src="{{ asset($blog->thumb_img) }}" alt="Blog 1">
@@ -181,8 +181,8 @@
                         </div>
                     </form>
                 </div>
-                {{-- <div class="col-lg-1 "></div> --}}
-                {{-- <div class="col-lg-5 col-md-6 col-sm-12 d-flex flex-column justify-content-center text-light contact-info">
+                <div class="col-lg-1 "></div>
+                <div class="col-lg-5 col-md-6 col-11 d-flex flex-column justify-content-center text-light contact-info">
                     <div class="mb-4 d-flex align-items-center">
                         <i class="fas fa-phone"></i>
                         <div>
@@ -204,7 +204,7 @@
                             <p>Warne Park Street Pine, FL 33157, New York</p>
                         </div>
                     </div>
-                </div> --}}
+                </div>
             </div>
         </div>
     </section>

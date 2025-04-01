@@ -113,7 +113,8 @@
                         <span class="micon bi bi-card-image"></span><span class="mtext">Hero/Banner</span>
                     </a>
                     <ul class="submenu">
-                        <li><a href="{{ route('admin.banner.edit',App\Models\Banner::first()->id) }}">Edit Banner</a></li>
+                        <li><a href="{{ route('admin.banner.edit', App\Models\Banner::first()->id) }}">Edit Banner</a>
+                        </li>
                     </ul>
                 </li>
                 <li class="dropdown">
@@ -123,6 +124,14 @@
                     <ul class="submenu">
                         <li><a href="{{ route('admin.blog-category.index') }}">Blog Category</a></li>
                         <li><a href="{{ route('admin.blog.index') }}">Blog</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="javascript:;" class="dropdown-toggle">
+                        <span class="micon bi bi-gear"></span><span class="mtext">Settings</span>
+                    </a>
+                    <ul class="submenu">
+                        <li><a href="{{ route('admin.setting.index') }}">General Setting</a></li>
                     </ul>
                 </li>
                 <li class="dropdown">
