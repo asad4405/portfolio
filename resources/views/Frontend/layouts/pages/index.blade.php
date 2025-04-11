@@ -17,10 +17,9 @@
                         </div>
                         <div class="col-12 col-lg-8">
                             <div class="mt-4 social-icons">
-                                <a href="#"><i class="fa-brands fa-facebook"></i></a>
-                                <a href="#"><i class="fa-brands fa-twitter"></i></a>
-                                <a href="#"><i class="fa-brands fa-linkedin"></i></a>
-                                <a href="#"><i class="fa-brands fa-github"></i></a>
+                                @foreach ($socialmedias as $socialmedia)
+                                    <a href="{{ $socialmedia->link }}"><i class="{{ $socialmedia->icon }}"></i></a>
+                                @endforeach
                             </div>
                         </div>
                     </div>

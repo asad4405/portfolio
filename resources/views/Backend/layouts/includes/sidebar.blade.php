@@ -136,6 +136,9 @@
                     <ul class="submenu">
                         <li><a href="{{ route('admin.setting.contact.index') }}">Contact</a></li>
                     </ul>
+                    <ul class="submenu">
+                        <li><a href="{{ route('admin.setting.social-media.index') }}">Social Media</a></li>
+                    </ul>
                 </li>
                 <li class="dropdown">
                     <a href="javascript:;" class="dropdown-toggle">
