@@ -187,21 +187,21 @@
                         <i class="fas fa-phone"></i>
                         <div>
                             <h5>Phone</h5>
-                            <p>+01 123 654 8096</p>
+                            <p>{{ $contact->number }}</p>
                         </div>
                     </div>
                     <div class="mb-4 d-flex align-items-center">
                         <i class="fas fa-envelope"></i>
                         <div>
                             <h5>Email</h5>
-                            <p>gerolddesign@mail.com</p>
+                            <p>{{ $contact->email }}</p>
                         </div>
                     </div>
                     <div class="d-flex align-items-center">
                         <i class="fas fa-map-marker-alt"></i>
                         <div>
                             <h5>Address</h5>
-                            <p>Warne Park Street Pine, FL 33157, New York</p>
+                            <p>{{ $contact->address }}</p>
                         </div>
                     </div>
                 </div>

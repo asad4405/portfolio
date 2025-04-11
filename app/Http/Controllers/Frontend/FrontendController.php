@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Frontend;
 use App\Http\Controllers\Controller;
 use App\Models\Banner;
 use App\Models\Blog;
+use App\Models\Contact;
 use Illuminate\Http\Request;
 
 class FrontendController extends Controller
@@ -13,7 +14,8 @@ class FrontendController extends Controller
     {
         $banner = Banner::where('status',1)->first();
         $blogs = Blog::where('status',1)->latest()->take(3)->get();
-        return view('Frontend.layouts.pages.index',compact('banner', 'blogs'));
+        $contact = Contact::first();
+        return view('Frontend.layouts.pages.index',compact('banner', 'blogs', 'contact'));
     }
 
     public function blog_details($slug)

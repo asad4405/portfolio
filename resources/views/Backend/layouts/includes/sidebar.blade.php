@@ -133,6 +133,9 @@
                     <ul class="submenu">
                         <li><a href="{{ route('admin.setting.index') }}">General Setting</a></li>
                     </ul>
+                    <ul class="submenu">
+                        <li><a href="{{ route('admin.setting.contact.index') }}">Contact</a></li>
+                    </ul>
                 </li>
                 <li class="dropdown">
                     <a href="javascript:;" class="dropdown-toggle">
