@@ -25,3 +25,6 @@ Route::resource('generalsetting', GeneralSettingController::class, ['names' => '
 Route::resource('contact', ContactController::class, ['names' => 'admin.setting.contact']);
 // social media
 Route::resource('social-media', SocialMediaController::class, ['names' => 'admin.setting.social-media']);
+// contact us list & show
+Route::get('/contact-us/list',[ContactController::class,'contactus_list'])->name('admin.contactus.list');
+Route::get('/contact-us/show/{id}',[ContactController::class,'contactus_show'])->name('admin.contactus.show');

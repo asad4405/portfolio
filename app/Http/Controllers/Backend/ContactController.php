@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use App\Models\Contact;
+use App\Models\ContactUs;
 use Illuminate\Http\Request;
 
 class ContactController extends Controller
@@ -73,5 +74,17 @@ class ContactController extends Controller
     public function destroy(string $id)
     {
         //
+    }
+
+    public function contactus_list()
+    {
+        $contactus_lists = ContactUs::latest()->get();
+        return view('Backend.contact_us.index',compact('contactus_lists'));
+    }
+
+    public function contactus_show($id)
+    {
+        $contactus_show = ContactUs::find($id);
+        return view('Backend.contact_us.show',compact('contactus_show'));
     }
 }

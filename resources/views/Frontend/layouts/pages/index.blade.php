@@ -157,22 +157,26 @@
                 <div class="col-lg-6 col-md-6 col-sm-12 contact-section">
                     <h2>Let's work together!</h2>
                     <p>I design and code beautifully simple things and I love what I do. Just simple like that!</p>
-                    <form>
+                    <form action="{{ route('contact.submit') }}" method="POST">
+                        @csrf
+                        @if (session('contactus_success'))
+                            <div class="alert alert-success">{{ session('contactus_success') }}</div>
+                        @endif
                         <div class="row g-3 contact-us-form">
                             <div class="col-md-6">
-                                <input type="text" class="form-control" placeholder="First name">
+                                <input type="text" name="first_name" class="form-control" placeholder="First name">
                             </div>
                             <div class="col-md-6">
-                                <input type="text" class="form-control" placeholder="Last name">
+                                <input type="text" name="last_name" class="form-control" placeholder="Last name">
                             </div>
                             <div class="col-md-6">
-                                <input type="email" class="form-control" placeholder="Email address">
+                                <input type="email" name="email" class="form-control" placeholder="Email address">
                             </div>
                             <div class="col-md-6">
-                                <input type="text" class="form-control" placeholder="Phone number">
+                                <input type="text" name="phone" class="form-control" placeholder="Phone number">
                             </div>
                             <div class="col-12">
-                                <textarea class="form-control" placeholder="Message" rows="4"></textarea>
+                                <textarea name="message" class="form-control" placeholder="Message" rows="4"></textarea>
                             </div>
                             <div class="col-12">
                                 <button type="submit" class="btn contact-btn-custom">Send Message</button>

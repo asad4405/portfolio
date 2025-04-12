@@ -50,7 +50,7 @@
                             @endforeach
                         </ul>
                     </li>
-                    <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ route('contact') }}">Contact</a></li>
                 </ul>
             </div>
         </div>
@@ -85,7 +85,7 @@
                 <!-- Collapsible Blog Submenu -->
                 <li class="nav-item">
                     <a class="nav-link" data-bs-toggle="collapse" href="#blogSubmenu" role="button">
-                        Blog ⬇
+                        Blog
                     </a>
                     <div class="collapse" id="blogSubmenu">
                         <ul class="navbar-nav ps-3">
@@ -97,7 +97,7 @@
                         </ul>
                     </div>
                 </li>
-                <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ route('contact') }}">Contact</a></li>
             </ul>
         </div>
     </div>
