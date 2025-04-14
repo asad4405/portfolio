@@ -96,6 +96,22 @@
         margin-left: 30px;
     }
 
+    /* ============= recent works ============= */
+    .portfolio-title {
+        font-size: 16px;
+    }
+
+    .portfolio-desc {
+        font-size: 12px;
+    }
+
+    .portfolio-arrow {
+        font-size: 14px;
+    }
+    .recent_work-line {
+        width: 270px;
+    }
+
     /* ============= blog details ============= */
     .sidebar{
         margin-top: 20px;

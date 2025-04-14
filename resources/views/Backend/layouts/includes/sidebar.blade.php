@@ -104,7 +104,7 @@
         <div class="sidebar-menu">
             <ul id="accordion-menu">
                 <li class="dropdown">
-                    <a href="{{ route('dashboard') }}" class="dropdown-toggle">
+                    <a href="{{ route('dashboard') }}" class="dropdown-toggle no-arrow">
                         <span class="micon bi bi-house"></span><span class="mtext">Dashboard</span>
                     </a>
                 </li>

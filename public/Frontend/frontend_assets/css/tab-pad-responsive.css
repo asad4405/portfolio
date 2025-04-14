@@ -68,6 +68,28 @@
     .about-image img {
         height: 100%;
     }
+    /* ========= recent works ========== */
+    .portfolio-overlay {
+        padding: 15px;
+    }
+
+    .portfolio-title {
+        font-size: 18px;
+    }
+
+    .portfolio-desc {
+        font-size: 13px;
+    }
+
+    .portfolio-arrow {
+        font-size: 16px;
+        top: 15px;
+        right: 15px;
+    }
+    .recent_work-line {
+        width: 350px;
+    }
+
     /* ========= recent bolg ========= */
     .recent-blog-line {
         width: 290px;
