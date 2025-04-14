@@ -150,6 +150,9 @@
                     <ul class="submenu">
                         <li><a href="{{ route('admin.education.index') }}">Education</a></li>
                     </ul>
+                    <ul class="submenu">
+                        <li><a href="{{ route('admin.experience.index') }}">Eexperience</a></li>
+                    </ul>
                 </li>
                 <li class="dropdown">
                     <a href="javascript:;" class="dropdown-toggle">

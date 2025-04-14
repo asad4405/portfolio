@@ -7,6 +7,8 @@ use App\Models\Banner;
 use App\Models\Blog;
 use App\Models\Contact;
 use App\Models\ContactUs;
+use App\Models\Education;
+use App\Models\Experience;
 use App\Models\SocialMedia;
 use Illuminate\Http\Request;
 
@@ -16,9 +18,11 @@ class FrontendController extends Controller
     {
         $banner = Banner::where('status', 1)->first();
         $socialmedias = SocialMedia::where('status', 1)->get();
+        $eductions = Education::latest()->get();
+        $experiences = Experience::orderBy('position', 'desc')->get();
         $blogs = Blog::where('status', 1)->latest()->take(3)->get();
         $contact = Contact::first();
-        return view('Frontend.layouts.pages.index', compact('banner', 'socialmedias', 'blogs', 'contact'));
+        return view('Frontend.layouts.pages.index', compact('banner', 'socialmedias', 'eductions', 'experiences', 'blogs', 'contact'));
     }
 
     public function blog_details($slug)

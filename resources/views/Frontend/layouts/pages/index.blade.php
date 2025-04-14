@@ -90,29 +90,23 @@
                 <div class="row">
                     <div class="col-12 col-md-12 col-lg-6">
                         <div class="highlight">Education</div>
-                        <div class="edu-exp-box">
-                            <p><strong>(2019 - 2020)</strong></p>
-                            <h5>Web Designer</h5>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                        </div>
-                        <div class="edu-exp-box">
-                            <p><strong>(2019 - 2020)</strong></p>
-                            <h5>Web Developer</h5>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                        </div>
+                        @foreach ($eductions as $education)
+                            <div class="edu-exp-box">
+                                <p><strong>{{ $education->year_title }}</strong></p>
+                                <h5>{{ $education->course_name }}</h5>
+                                <p>{{ $education->institute_name }}</p>
+                            </div>
+                        @endforeach
                     </div>
                     <div class="col-12 col-md-12 col-lg-6">
                         <div class="highlight mobile_highlight">Experience</div>
-                        <div class="edu-exp-box">
-                            <p><i class="fa-solid fa-code"></i></p>
-                            <h5>Front-End Developer</h5>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                        </div>
-                        <div class="edu-exp-box">
-                            <p><i class="fa-solid fa-code"></i></p>
-                            <h5>Back-End Developer</h5>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                        </div>
+                        @foreach ($experiences as $experience)
+                            <div class="edu-exp-box">
+                                <p><i class="{{ $experience->icon }}"></i></p>
+                                <h5>{{ $experience->exp_position }}</h5>
+                                <p>{{ $experience->details }}</p>
+                            </div>
+                        @endforeach
                     </div>
                 </div>
             </div>

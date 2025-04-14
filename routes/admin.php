@@ -6,6 +6,7 @@ use App\Http\Controllers\Backend\BlogController;
 use App\Http\Controllers\Backend\ContactController;
 use App\Http\Controllers\Backend\DashboardController;
 use App\Http\Controllers\Backend\EducationController;
+use App\Http\Controllers\Backend\ExperienceController;
 use App\Http\Controllers\Backend\GeneralSettingController;
 use App\Http\Controllers\Backend\SocialMediaController;
 use Illuminate\Support\Facades\Route;
@@ -31,3 +32,5 @@ Route::get('/contact-us/list',[ContactController::class,'contactus_list'])->name
 Route::get('/contact-us/show/{id}',[ContactController::class,'contactus_show'])->name('admin.contactus.show');
 // education
 Route::resource('education', EducationController::class, ['names' => 'admin.education']);
+// education
+Route::resource('experience', ExperienceController::class, ['names' => 'admin.experience']);
