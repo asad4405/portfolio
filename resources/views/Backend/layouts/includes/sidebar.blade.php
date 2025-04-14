@@ -145,6 +145,14 @@
                 </li>
                 <li class="dropdown">
                     <a href="javascript:;" class="dropdown-toggle">
+                        <span class="micon bi bi-mortarboard"></span><span class="mtext">Education/Experience </span>
+                    </a>
+                    <ul class="submenu">
+                        <li><a href="{{ route('admin.education.index') }}">Education</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="javascript:;" class="dropdown-toggle">
                         <span class="micon bi bi-textarea-resize"></span><span class="mtext">Forms</span>
                     </a>
                     <ul class="submenu">
