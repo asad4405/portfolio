@@ -181,47 +181,66 @@
     border: 2px solid #A970FF;
 }
 
-.exp-line {
-    width: 630px;
-    border: 2px solid #A970FF;
-    margin: 25px auto;
+/*  ============ education experience =========== */
+.main-wrapper {
+    /* background-color: #f5f0ff; */
+    font-family: 'Segoe UI', sans-serif;
+    padding: 2rem 1rem;
 }
 
-.highlight {
-    background-color: #A970FF;
+.exp-desc {
     color: #fff;
+}
+
+.edu-desc {
+    color: #fff;
+}
+
+.experience-title,
+.education-title {
+    font-weight: 700;
+    color: #6f42c1;
+    margin-bottom: 20px;
+}
+
+.edu-exp-section-title i {
+    font-size: 30px;
+    margin-right: 10px;
+    color: #6f42c1;
+    margin-bottom: 20px;
+}
+
+.card-custom {
+    background-color: #140C1C;
+    border: none;
+    border-radius: 20px;
     padding: 20px;
-    font-weight: bold;
-    font-size: 20px;
-    border-radius: 5px;
-    text-align: center;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
 }
-.edu-exp-box {
+
+.card-custom .title {
     color: #fff;
-    padding: 15px;
-    border-radius: 5px;
-    margin-top: 15px;
-    border: 2px solid #7545D8;
+    font-weight: bold;
+    font-size: 1.1rem;
 }
 
-.edu-exp-box h5{
-    font-size: 22px;
-    margin-left: 20px;
+.card-custom .date {
+    font-weight: bold;
+    color: #6f42c1;
 }
 
-.edu-exp-box p{
-    font-size: 20px;
-    margin-left: 20px;
+.card-custom:hover {
+    background: linear-gradient(to right, #6f42c1, #8a2be2);
+    color: white;
+    transition: 0.5s ease-in;
 }
 
-.edu-exp-box p i{
-    font-size: 25px;
-}
-
-.edu-exp-box:hover {
-    background-color: #A970FF;
-    border: 2px solid #fff;
-    transition: 0.6s ease-in-out;
+.card-custom:hover .date,
+.card-custom:hover .title,
+.card-custom:hover div:not(.date):not(.title) {
+    color: #fff;
 }
 
 /* =========== recent work/portfolio ============ */

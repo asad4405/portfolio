@@ -87,26 +87,41 @@
             <div class="education-experience">
                 <h2 class="section-title">EDUCATION & EXPERIENCE</h2>
                 <div class="exp-line"></div>
-                <div class="row">
-                    <div class="col-12 col-md-12 col-lg-6">
-                        <div class="highlight">Education</div>
-                        @foreach ($eductions as $education)
-                            <div class="edu-exp-box">
-                                <p><strong>{{ $education->year_title }}</strong></p>
-                                <h5>{{ $education->course_name }}</h5>
-                                <p>{{ $education->institute_name }}</p>
+                <div class="main-wrapper">
+                    <div class="text-center row text-md-start">
+                        <!-- Experience Column -->
+                        <div class="mb-4 col-md-6">
+                            <div class="edu-exp-section-title">
+                                <i class="fa-solid fa-graduation-cap"></i>
+                                <h2 class="education-title">My Education</h2>
                             </div>
-                        @endforeach
-                    </div>
-                    <div class="col-12 col-md-12 col-lg-6">
-                        <div class="highlight mobile_highlight">Experience</div>
-                        @foreach ($experiences as $experience)
-                            <div class="edu-exp-box">
-                                <p><i class="{{ $experience->icon }}"></i></p>
-                                <h5>{{ $experience->exp_position }}</h5>
-                                <p>{{ $experience->details }}</p>
+
+                            @foreach ($eductions as $education)
+                                <div class="card-custom">
+                                    <div class="date">{{ $education->year_title }}</div>
+                                    <div class="title">{{ $education->course_name }}</div>
+                                    <div class="exp-desc">{{ $education->institute_name }}</div>
+                                </div>
+                            @endforeach
+
+                        </div>
+
+                        <!-- Education Column -->
+                        <div class="col-md-6">
+                            <div class="edu-exp-section-title">
+                                <i class="fa-solid fa-briefcase"></i>
+                                <h2 class="experience-title">My Experience</h2>
                             </div>
-                        @endforeach
+
+                            @foreach ($experiences as $experience)
+                                <div class="card-custom">
+                                    <div class="date"><i class="{{ $experience->icon }}"></i></div>
+                                    <div class="title">{{ $experience->exp_position }}</div>
+                                    <div class="edu-desc">{{ $experience->details }}</div>
+                                </div>
+                            @endforeach
+
+                        </div>
                     </div>
                 </div>
             </div>
@@ -126,7 +141,8 @@
                 </li>
                 @foreach ($portfolios as $value)
                     <li class="nav-item">
-                        <button class="nav-link" data-bs-toggle="pill" data-bs-target="#{{ $value->category_id }}">UX/UI</button>
+                        <button class="nav-link" data-bs-toggle="pill"
+                            data-bs-target="#{{ $value->category_id }}">UX/UI</button>
                     </li>
                 @endforeach
             </ul>
@@ -136,7 +152,7 @@
                 <!-- All -->
                 <div class="tab-pane fade show active" id="all">
                     <div class="row g-4 justify-content-center">
-                        @foreach ($portfolios as $value)
+                        @foreach ($portfolios->take(6) as $value)
                             <a href="{{ $value->link }}">
                                 <div class="col-md-6 portfolio-item show">
                                     <div class="portfolio-card">
