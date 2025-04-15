@@ -119,6 +119,26 @@
                 </li>
                 <li class="dropdown">
                     <a href="javascript:;" class="dropdown-toggle">
+                        <span class="micon bi bi-mortarboard"></span><span class="mtext">Education/Experience </span>
+                    </a>
+                    <ul class="submenu">
+                        <li><a href="{{ route('admin.education.index') }}">Education</a></li>
+                    </ul>
+                    <ul class="submenu">
+                        <li><a href="{{ route('admin.experience.index') }}">Eexperience</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="javascript:;" class="dropdown-toggle">
+                        <span class="micon bi bi-briefcase"></span><span class="mtext">Portfolio</span>
+                    </a>
+                    <ul class="submenu">
+                        <li><a href="{{ route('admin.portfolio-category.index') }}">Portfolio Category</a></li>
+                        <li><a href="{{ route('admin.portfolio.index') }}">Portfolio</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="javascript:;" class="dropdown-toggle">
                         <span class="micon bi bi-journal-text"></span><span class="mtext">Blogs</span>
                     </a>
                     <ul class="submenu">
@@ -141,17 +161,6 @@
                     </ul>
                     <ul class="submenu">
                         <li><a href="{{ route('admin.contactus.list') }}">Contact Us List</a></li>
-                    </ul>
-                </li>
-                <li class="dropdown">
-                    <a href="javascript:;" class="dropdown-toggle">
-                        <span class="micon bi bi-mortarboard"></span><span class="mtext">Education/Experience </span>
-                    </a>
-                    <ul class="submenu">
-                        <li><a href="{{ route('admin.education.index') }}">Education</a></li>
-                    </ul>
-                    <ul class="submenu">
-                        <li><a href="{{ route('admin.experience.index') }}">Eexperience</a></li>
                     </ul>
                 </li>
                 <li class="dropdown">

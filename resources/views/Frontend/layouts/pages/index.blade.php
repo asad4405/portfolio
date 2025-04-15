@@ -113,8 +113,9 @@
         </div>
     </section>
 
-    <!-- ====================== new =================== -->
+    {{-- ====================== new =================== --}}
     <section>
+
         <div class="container py-5 text-center">
             <h2 class="section-title">MY RECENT WORKS</h2>
             <div class="recent_work-line"></div>
@@ -123,15 +124,11 @@
                 <li class="nav-item">
                     <button class="nav-link active" data-bs-toggle="pill" data-bs-target="#all">All</button>
                 </li>
-                <li class="nav-item">
-                    <button class="nav-link" data-bs-toggle="pill" data-bs-target="#ux">UX/UI</button>
-                </li>
-                <li class="nav-item">
-                    <button class="nav-link" data-bs-toggle="pill" data-bs-target="#branding">Branding</button>
-                </li>
-                <li class="nav-item">
-                    <button class="nav-link" data-bs-toggle="pill" data-bs-target="#apps">Apps</button>
-                </li>
+                @foreach ($portfolios as $value)
+                    <li class="nav-item">
+                        <button class="nav-link" data-bs-toggle="pill" data-bs-target="#{{ $value->category_id }}">UX/UI</button>
+                    </li>
+                @endforeach
             </ul>
 
             <!-- Content -->
@@ -139,80 +136,43 @@
                 <!-- All -->
                 <div class="tab-pane fade show active" id="all">
                     <div class="row g-4 justify-content-center">
-                        <div class="col-md-6 portfolio-item show">
-                            <div class="portfolio-card">
-                                <img src="https://themejunction.net/tailwind/gerold/demo/assets/img/portfolio/2.jpg"
-                                    alt="Deloitte">
-                                <div class="portfolio-overlay">
-                                    <div class="portfolio-title">Deloitte</div>
-                                    <p class="portfolio-desc">Project was about precision and information.</p>
-                                    <div class="portfolio-arrow">↗</div>
+                        @foreach ($portfolios as $value)
+                            <a href="{{ $value->link }}">
+                                <div class="col-md-6 portfolio-item show">
+                                    <div class="portfolio-card">
+                                        <img src="https://themejunction.net/tailwind/gerold/demo/assets/img/portfolio/2.jpg"
+                                            alt="Deloitte">
+                                        <a href="{{ $value->link }}">
+                                            <div class="portfolio-overlay">
+                                                <div class="portfolio-title">{{ $value->title }}</div>
+                                                <p class="portfolio-desc">{{ $value->details }}</p>
+                                                <div class="portfolio-arrow">↗</div>
+                                            </div>
+                                        </a>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-6 portfolio-item show">
-                            <div class="portfolio-card">
-                                <img src="https://themejunction.net/tailwind/gerold/demo/assets/img/portfolio/3.jpg"
-                                    alt="Sebastian">
-                                <div class="portfolio-overlay">
-                                    <div class="portfolio-title">Sebastian Camargo</div>
-                                    <p class="portfolio-desc">Tattoo brand site with mobile-first UX.</p>
-                                    <div class="portfolio-arrow">↗</div>
-                                </div>
-                            </div>
-                        </div>
+                            </a>
+                        @endforeach
                     </div>
                 </div>
 
-                <!-- UX -->
-                <div class="tab-pane fade" id="ux">
+                <!-- portfolio -->
+                <div class="tab-pane fade" id="{{ $value->id }}">
                     <div class="row g-4 justify-content-center">
-                        <div class="col-md-6 portfolio-item show">
-                            <div class="portfolio-card">
-                                <img src="https://themejunction.net/tailwind/gerold/demo/assets/img/portfolio/3.jpg"
-                                    alt="UX">
-                                <div class="portfolio-overlay">
-                                    <div class="portfolio-title">UX/UI Project</div>
-                                    <p class="portfolio-desc">Smooth interface for improved user flow.</p>
-                                    <div class="portfolio-arrow">↗</div>
+                        @foreach ($portfolios as $value)
+                            <div class="col-md-6 portfolio-item show">
+                                <div class="portfolio-card">
+                                    <img src="{{ $value->image }}" alt="UX">
+                                    <a href="{{ $value->link }}">
+                                        <div class="portfolio-overlay">
+                                            <div class="portfolio-title">{{ $value->title }}</div>
+                                            <p class="portfolio-desc">{{ $value->details }}</p>
+                                            <div class="portfolio-arrow">↗</div>
+                                        </div>
+                                    </a>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Branding -->
-                <div class="tab-pane fade" id="branding">
-                    <div class="row g-4 justify-content-center">
-                        <div class="col-md-6 portfolio-item show">
-                            <div class="portfolio-card">
-                                <img src="https://themejunction.net/tailwind/gerold/demo/assets/img/portfolio/2.jpg"
-                                    alt="Branding">
-                                <div class="portfolio-overlay">
-                                    <div class="portfolio-title">Branding Project</div>
-                                    <p class="portfolio-desc">Visual identity for a finance brand.</p>
-                                    <div class="portfolio-arrow">↗</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Apps -->
-                <div class="tab-pane fade" id="apps">
-                    <div class="row g-4 justify-content-center">
-                        <div class="col-md-6 portfolio-item show">
-                            <div class="portfolio-card">
-                                <img src="https://via.placeholder.com/400x300/000000/FFFFFF?text=Mobile+App"
-                                    alt="App">
-                                <div class="portfolio-overlay">
-                                    <div class="portfolio-title">Mobile App</div>
-                                    <p class="portfolio-desc">App for productivity tracking.</p>
-                                    <div class="portfolio-arrow">↗</div>
-                                </div>
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
             </div>

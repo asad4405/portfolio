@@ -8,6 +8,8 @@ use App\Http\Controllers\Backend\DashboardController;
 use App\Http\Controllers\Backend\EducationController;
 use App\Http\Controllers\Backend\ExperienceController;
 use App\Http\Controllers\Backend\GeneralSettingController;
+use App\Http\Controllers\Backend\PortfolioCategoryController;
+use App\Http\Controllers\Backend\PortfolioController;
 use App\Http\Controllers\Backend\SocialMediaController;
 use Illuminate\Support\Facades\Route;
 
@@ -16,6 +18,10 @@ Route::get('/dashboard', [DashboardController::class, 'index'])->middleware(['au
 // banner
 Route::resource('banner', BannerController::class, ['names' => 'admin.banner']);
 
+// portfolio category
+Route::resource('portfolio-category', PortfolioCategoryController::class, ['names' => 'admin.portfolio-category']);
+// portfolio
+Route::resource('portfolio', PortfolioController::class, ['names' => 'admin.portfolio']);
 // blogs
 // blog category
 Route::resource('blog-category', BlogCategoryController::class, ['names' => 'admin.blog-category']);

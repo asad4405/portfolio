@@ -9,6 +9,8 @@ use App\Models\Contact;
 use App\Models\ContactUs;
 use App\Models\Education;
 use App\Models\Experience;
+use App\Models\Portfolio;
+use App\Models\PortfolioCategory;
 use App\Models\SocialMedia;
 use Illuminate\Http\Request;
 
@@ -19,10 +21,11 @@ class FrontendController extends Controller
         $banner = Banner::where('status', 1)->first();
         $socialmedias = SocialMedia::where('status', 1)->get();
         $eductions = Education::latest()->get();
-        $experiences = Experience::orderBy('position', 'desc')->get();
+        $experiences = Experience::orderBy('position', 'asc')->get();
+        $portfolios = Portfolio::orderBy('position', 'asc')->get();
         $blogs = Blog::where('status', 1)->latest()->take(3)->get();
         $contact = Contact::first();
-        return view('Frontend.layouts.pages.index', compact('banner', 'socialmedias', 'eductions', 'experiences', 'blogs', 'contact'));
+        return view('Frontend.layouts.pages.index', compact('banner', 'socialmedias', 'eductions', 'experiences', 'portfolios', 'blogs', 'contact'));
     }
 
     public function blog_details($slug)
@@ -35,7 +38,7 @@ class FrontendController extends Controller
     public function contact()
     {
         $contact = Contact::first();
-        return view('Frontend.layouts.pages.contact',compact('contact'));
+        return view('Frontend.layouts.pages.contact', compact('contact'));
     }
 
     public function contact_submit(Request $request)
@@ -50,6 +53,6 @@ class FrontendController extends Controller
 
         $contact_us->save();
 
-        return back()->with('contactus_success','Message send Successfully!');
+        return back()->with('contactus_success', 'Message send Successfully!');
     }
 }
