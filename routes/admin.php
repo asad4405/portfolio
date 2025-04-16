@@ -10,6 +10,7 @@ use App\Http\Controllers\Backend\ExperienceController;
 use App\Http\Controllers\Backend\GeneralSettingController;
 use App\Http\Controllers\Backend\PortfolioCategoryController;
 use App\Http\Controllers\Backend\PortfolioController;
+use App\Http\Controllers\Backend\SkillController;
 use App\Http\Controllers\Backend\SocialMediaController;
 use Illuminate\Support\Facades\Route;
 
@@ -40,3 +41,5 @@ Route::get('/contact-us/show/{id}',[ContactController::class,'contactus_show'])-
 Route::resource('education', EducationController::class, ['names' => 'admin.education']);
 // education
 Route::resource('experience', ExperienceController::class, ['names' => 'admin.experience']);
+// skill
+Route::resource('skill', SkillController::class, ['names' => 'admin.skill']);

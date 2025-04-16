@@ -11,6 +11,7 @@ use App\Models\Education;
 use App\Models\Experience;
 use App\Models\Portfolio;
 use App\Models\PortfolioCategory;
+use App\Models\Skill;
 use App\Models\SocialMedia;
 use Illuminate\Http\Request;
 
@@ -23,9 +24,10 @@ class FrontendController extends Controller
         $eductions = Education::latest()->get();
         $experiences = Experience::orderBy('position', 'asc')->get();
         $portfolios = Portfolio::orderBy('position', 'asc')->get();
+        $skills = Skill::orderBy('position', 'asc')->get();
         $blogs = Blog::where('status', 1)->latest()->take(3)->get();
         $contact = Contact::first();
-        return view('Frontend.layouts.pages.index', compact('banner', 'socialmedias', 'eductions', 'experiences', 'portfolios', 'blogs', 'contact'));
+        return view('Frontend.layouts.pages.index', compact('banner', 'socialmedias', 'eductions', 'experiences', 'portfolios', 'skills', 'blogs', 'contact'));
     }
 
     public function blog_details($slug)

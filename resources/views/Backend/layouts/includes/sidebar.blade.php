@@ -139,6 +139,14 @@
                 </li>
                 <li class="dropdown">
                     <a href="javascript:;" class="dropdown-toggle">
+                        <span class="micon bi bi-tools"></span><span class="mtext">Skills</span>
+                    </a>
+                    <ul class="submenu">
+                        <li><a href="{{ route('admin.skill.index') }}">Skills</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="javascript:;" class="dropdown-toggle">
                         <span class="micon bi bi-journal-text"></span><span class="mtext">Blogs</span>
                     </a>
                     <ul class="submenu">

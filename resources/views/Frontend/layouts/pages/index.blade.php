@@ -91,7 +91,7 @@
                     <div class="text-center row text-md-start">
                         <!-- Experience Column -->
                         <div class="mb-4 col-md-6">
-                            <div class="edu-exp-section-title">
+                            <div class="edu-exp-section-title d-flex">
                                 <i class="fa-solid fa-graduation-cap"></i>
                                 <h2 class="education-title">My Education</h2>
                             </div>
@@ -108,7 +108,7 @@
 
                         <!-- Education Column -->
                         <div class="col-md-6">
-                            <div class="edu-exp-section-title">
+                            <div class="edu-exp-section-title d-flex">
                                 <i class="fa-solid fa-briefcase"></i>
                                 <h2 class="experience-title">My Experience</h2>
                             </div>
@@ -128,9 +128,8 @@
         </div>
     </section>
 
-    {{-- ====================== new =================== --}}
+    <!-- ====================== works/portfolio =================== -->
     <section>
-
         <div class="container py-5 text-center">
             <h2 class="section-title">MY RECENT WORKS</h2>
             <div class="recent_work-line"></div>
@@ -195,6 +194,92 @@
         </div>
 
     </section>
+
+    <!-- ======================= skills ===================== -->
+    <style>
+        .my-skills-style {
+            background-color: #0e061b;
+            color: #c7a0ff;
+            font-family: 'Poppins', sans-serif;
+            padding: 60px 20px;
+        }
+
+        .skill-card {
+            background-color: #1e0c3c;
+            border: 1px solid transparent;
+            border-radius: 20px;
+            padding: 30px 20px;
+            transition: all 0.3s ease;
+            height: 100%;
+            text-align: center;
+        }
+
+        .skill-card:hover {
+            border-color: #915cff;
+            background-color: #2d1561;
+            box-shadow: 0 0 20px rgba(145, 92, 255, 0.4);
+        }
+
+        .skill-icon i {
+            font-size: 60px;
+            color: #797979;
+            transition: color 0.3s ease;
+        }
+
+        .skill-card:hover .skill-icon i {
+            color: var(--hover-color) !important;
+        }
+
+        .skill-percentage {
+            font-weight: bold;
+            font-size: 1.25rem;
+            color: #c7a0ff;
+            margin-top: 10px;
+        }
+
+        .skill-name {
+            margin-top: 10px;
+            font-size: 1rem;
+            color: #b37cff;
+        }
+
+        @media (max-width: 767.98px) {
+            .skill-icon i {
+                font-size: 48px;
+            }
+
+            .skill-card {
+                padding: 20px 15px;
+            }
+        }
+    </style>
+
+    <div class="my-skills-style">
+
+        <section class="text-center">
+            <h2 class="fw-bold text-light">My Skills</h2>
+            <p class="text-secondary">We put your ideas and thus your wishes in the form of a unique web project that
+                inspires you and your customers.</p>
+
+            <div class="container mt-5">
+                <div class="row g-3 justify-content-center">
+
+                    @foreach ($skills as $skill)
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                            <div class="skill-card">
+                                <div class="skill-icon">
+                                    <i class="{{ $skill->icon }}" style="--hover-color:{{ $skill->color }};"></i>
+                                </div>
+                                <div class="skill-percentage">{{ $skill->percentage }}%</div>
+                                <div class="skill-name">{{ $skill->name }}</div>
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
+            </div>
+        </section>
+    </div>
+
 
 
     <!-- ======================== Blog ======================= -->
