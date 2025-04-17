@@ -5,6 +5,7 @@ use App\Http\Controllers\Backend\BannerController;
 use App\Http\Controllers\Backend\BlogCategoryController;
 use App\Http\Controllers\Backend\BlogController;
 use App\Http\Controllers\Backend\ContactController;
+use App\Http\Controllers\Backend\CounterController;
 use App\Http\Controllers\Backend\DashboardController;
 use App\Http\Controllers\Backend\EducationController;
 use App\Http\Controllers\Backend\ExperienceController;
@@ -22,6 +23,8 @@ Route::resource('banner', BannerController::class, ['names' => 'admin.banner']);
 
 // about
 Route::resource('/admin/about', AboutController::class, ['names' => 'admin.about']);
+// counter
+Route::resource('/counter', CounterController::class, ['names' => 'admin.counter']);
 
 // portfolio category
 Route::resource('portfolio-category', PortfolioCategoryController::class, ['names' => 'admin.portfolio-category']);

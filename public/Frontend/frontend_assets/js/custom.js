@@ -5,16 +5,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const startCounter = (counter) => {
         const target = +counter.getAttribute("data-target");
+        const showPlus = counter.getAttribute("data-plus") === "true";
         let count = 0;
-        const speed = target / 100; // Adjust speed
+        const speed = target / 100;
 
         const updateCounter = () => {
             if (count < target) {
                 count += speed;
-                counter.innerText = Math.floor(count);
+                counter.innerText = showPlus
+                    ? `${Math.floor(count)}+`
+                    : Math.floor(count);
                 requestAnimationFrame(updateCounter);
             } else {
-                counter.innerText = target;
+                counter.innerText = showPlus ? `${target}+` : target;
             }
         };
 
@@ -34,4 +37,5 @@ document.addEventListener("DOMContentLoaded", () => {
 
     counters.forEach((counter) => observer.observe(counter));
 });
+
 // ==================== counter end ======================= //

@@ -8,6 +8,7 @@ use App\Models\Banner;
 use App\Models\Blog;
 use App\Models\Contact;
 use App\Models\ContactUs;
+use App\Models\Counter;
 use App\Models\Education;
 use App\Models\Experience;
 use App\Models\Portfolio;
@@ -23,13 +24,14 @@ class FrontendController extends Controller
         $banner = Banner::where('status', 1)->first();
         $about = About::where('status', 1)->first();
         $socialmedias = SocialMedia::where('status', 1)->get();
-        $eductions = Education::latest()->get();
-        $experiences = Experience::orderBy('position', 'asc')->get();
-        $portfolios = Portfolio::orderBy('position', 'asc')->get();
-        $skills = Skill::orderBy('position', 'asc')->get();
+        $counters = Counter::where('status', 1)->orderBy('position', 'asc')->get();
+        $eductions = Education::where('status', 1)->latest()->get();
+        $experiences = Experience::where('status', 1)->orderBy('position', 'asc')->get();
+        $portfolios = Portfolio::where('status', 1)->orderBy('position', 'asc')->get();
+        $skills = Skill::where('status', 1)->orderBy('position', 'asc')->get();
         $blogs = Blog::where('status', 1)->latest()->take(3)->get();
         $contact = Contact::first();
-        return view('Frontend.layouts.pages.index', compact('banner', 'about', 'socialmedias', 'eductions', 'experiences', 'portfolios', 'skills', 'blogs', 'contact'));
+        return view('Frontend.layouts.pages.index', compact('banner', 'about', 'socialmedias', 'counters', 'eductions', 'experiences', 'portfolios', 'skills', 'blogs', 'contact'));
     }
 
     public function blog_details($slug)

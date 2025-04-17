@@ -36,22 +36,12 @@
         <div class="py-3 counter-section">
             <div class="container">
                 <div class="text-center row">
-                    <div class="col-6 col-md-3">
-                        <h2 class="counter" data-target="14"></h2>
-                        <p class="text-white">Years of Experience</p>
-                    </div>
-                    <div class="col-6 col-md-3">
-                        <h2 class="counter" data-target="50"></h2>
-                        <p class="text-white">Projects Completed</p>
-                    </div>
-                    <div class="col-6 col-md-3">
-                        <h2 class="counter" data-target="1000"></h2>
-                        <p class="text-white">Happy Clients</p>
-                    </div>
-                    <div class="col-6 col-md-3">
-                        <h2 class="counter" data-target="14"></h2>
-                        <p class="text-white">Years of Experience</p>
-                    </div>
+                    @foreach ($counters as $value)
+                        <div class="col-6 col-md-3">
+                            <h2 class="counter" data-target="{{ $value->count }}" @if ($value->plus == 1) data-plus="true" @endif></h2>
+                            <p class="text-white">{{ $value->title }}</p>
+                        </div>
+                    @endforeach
                 </div>
             </div>
         </div>
@@ -66,8 +56,7 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="about-image">
-                            <img src="{{ asset($about->image) }}"
-                                alt="">
+                            <img src="{{ asset($about->image) }}" alt="">
                         </div>
                     </div>
                     <div class="about-text">
