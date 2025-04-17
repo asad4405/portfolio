@@ -66,20 +66,15 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="about-image">
-                            <img src="{{ asset('public/Frontend/frontend_assets/images/about-banner.jpg') }}"
+                            <img src="{{ asset($about->image) }}"
                                 alt="">
                         </div>
                     </div>
                     <div class="about-text">
-                        <h3>I am <span>Md. Asaduzzaman</span></h3>
-                        <h5>Software Developer</h5>
+                        <h3>I am <span>{{ $about->name }}</span></h3>
+                        <h5>{{ $about->designation }}</h5>
                         <hr>
-                        <p>I'm a Professional Software Developer.
-                            I have 1 year+ work experience.
-                            I make top-quality websites. User-friendly and responsive custom websites. Skills:- HTML5, CSS3,
-                            Bootstrap, JavaScript, jQuery, ajax, PHP, Laravel, MySQL. I always give a chance to my clients
-                            to prove my best. Please feel
-                            free to contact me anytime.</p>
+                        <p>{{ $about->details }}</p>
                     </div>
                 </div>
             </div>

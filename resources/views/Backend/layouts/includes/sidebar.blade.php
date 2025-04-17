@@ -119,6 +119,15 @@
                 </li>
                 <li class="dropdown">
                     <a href="javascript:;" class="dropdown-toggle">
+                        <span class="micon bi bi-person-circle"></span><span class="mtext">About</span>
+                    </a>
+                    <ul class="submenu">
+                        <li><a href="{{ route('admin.about.edit', App\Models\About::first()->id) }}">Edit About</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="javascript:;" class="dropdown-toggle">
                         <span class="micon bi bi-mortarboard"></span><span class="mtext">Education/Experience </span>
                     </a>
                     <ul class="submenu">

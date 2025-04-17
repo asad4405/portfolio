@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Backend\AboutController;
 use App\Http\Controllers\Backend\BannerController;
 use App\Http\Controllers\Backend\BlogCategoryController;
 use App\Http\Controllers\Backend\BlogController;
@@ -18,6 +19,9 @@ Route::get('/dashboard', [DashboardController::class, 'index'])->middleware(['au
 
 // banner
 Route::resource('banner', BannerController::class, ['names' => 'admin.banner']);
+
+// about
+Route::resource('/admin/about', AboutController::class, ['names' => 'admin.about']);
 
 // portfolio category
 Route::resource('portfolio-category', PortfolioCategoryController::class, ['names' => 'admin.portfolio-category']);

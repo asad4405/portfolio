@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use App\Models\About;
 use App\Models\Banner;
 use App\Models\Blog;
 use App\Models\Contact;
@@ -20,6 +21,7 @@ class FrontendController extends Controller
     public function index()
     {
         $banner = Banner::where('status', 1)->first();
+        $about = About::where('status', 1)->first();
         $socialmedias = SocialMedia::where('status', 1)->get();
         $eductions = Education::latest()->get();
         $experiences = Experience::orderBy('position', 'asc')->get();
@@ -27,7 +29,7 @@ class FrontendController extends Controller
         $skills = Skill::orderBy('position', 'asc')->get();
         $blogs = Blog::where('status', 1)->latest()->take(3)->get();
         $contact = Contact::first();
-        return view('Frontend.layouts.pages.index', compact('banner', 'socialmedias', 'eductions', 'experiences', 'portfolios', 'skills', 'blogs', 'contact'));
+        return view('Frontend.layouts.pages.index', compact('banner', 'about', 'socialmedias', 'eductions', 'experiences', 'portfolios', 'skills', 'blogs', 'contact'));
     }
 
     public function blog_details($slug)
