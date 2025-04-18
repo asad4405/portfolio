@@ -43,6 +43,10 @@
         font-size: 20px;
         margin-bottom: -8px;
     }
+    .about-us-title.section-title{
+        margin-bottom: 0 !important;
+        
+    }
 
     .about-line {
         width: 130px;
@@ -95,7 +99,14 @@
     .contact-info {
         margin-left: 30px;
     }
+    /* ============= skill ================== */
+        .skill-icon i {
+            font-size: 48px;
+        }
 
+        .skill-card {
+            padding: 20px 15px;
+        }
     /* ============= recent works ============= */
     .portfolio-title {
         font-size: 16px;

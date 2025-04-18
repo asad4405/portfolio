@@ -1,5 +1,16 @@
+ :root {
+    --primary-color: #615319;
+    --secondary-color: #0b3e8a;
+    --tertiary-color: #351C68;
+ }
+
+ .dark-theme {
+     --primary-color: #0D0514;
+     --secondary-color: #fff;
+ }
  body {
-     background-color: #0D0514;
+    color: var(--secondary-color);
+    background-color: var(--primary-color);
     font-family: Arial, sans-serif;
  }
  a{
@@ -7,8 +18,8 @@
  }
 
  .navbar {
-     background-color: #0D0514;
-     padding: 10px 20px;
+    background-color: var(--primary-color);
+    padding: 10px 20px;
  }
 
  .navbar-brand img {
@@ -16,24 +27,24 @@
  }
 
  .nav-link {
-     color: white !important;
+     color: var(--secondary-color) !important;
      margin: 0 10px;
      transition: all 0.3s ease-in-out;
  }
 
  .navbar-toggler {
      border: none;
-     color: white;
+     color: var(--secondary-color);
  }
 
  /* Offcanvas Drawer (Mobile) */
  .offcanvas {
-     background-color: #0D0514;
-     color: white;
+     background-color: var(--primary-color);
+     color: var(--secondary-color);
  }
 
  .offcanvas-header {
-     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+     border-bottom: 1px solid var(--secondary-color);
  }
 
  /* White Close Button */
@@ -46,8 +57,8 @@
  }
 
 .navbar-submenu .dropdown-item:hover{
-    color: #fff;
-    background-color: #4a0c81;
+    color: var(--secondary-color);
+    background-color: var(--primary-color);
 }
 
 /* ============= banner section ============ */
@@ -58,7 +69,7 @@
 }
 
 .hero-text h1 {
-    color: #fff;
+    color: var(--secondary-color);
     font-size: 45px;
     font-weight: bold;
 }
@@ -66,18 +77,18 @@
 .hero-text h2 {
     font-size: 52px;
     font-weight: bold;
-    color: #A970FF;
+    color: var(--secondary-color);
 }
 
 .hero-text p {
-    color: #fff;
+    color: var(--secondary-color);
     font-size: 18px;
     opacity: 0.8;
 }
 
 .btn-custom {
-    border: 1px solid #A970FF;
-    color: white;
+    border: 1px solid var(--secondary-color);
+    color: var(--secondary-color);
     background: transparent;
     padding: 12px 20px;
     border-radius: 25px;
@@ -88,12 +99,12 @@
 }
 
 .btn-custom:hover {
-    background-color: #A970FF;
-    color: white;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
 }
 
 .social-icons a {
-    color: white;
+    color: var(--secondary-color);
     font-size: 20px;
     margin-right: 15px;
     text-decoration: none;
@@ -101,15 +112,15 @@
 
 .social-icons i {
     font-size: 16px;
-    color: #A970FF;
+    color: var(--primary-color);
     padding: 8px;
-    border: 1px solid #A970FF;
+    border: 1px solid var(--primary-color);
     border-radius: 50%;
 }
 
 .social-icons i:hover {
-    color: #fff;
-    background: #A970FF;
+    color: var(--secondary-color);
+    background: var(--primary-color);
     transition: 0.3s;
 }
 
@@ -117,7 +128,7 @@
     max-width: 100%;
     border-radius: 30px;
     max-height: 450px;
-    border: 2px solid #A970FF;
+    border: 2px solid var(--primary-color);
     object-fit: cover;
 }
 /* counter */
@@ -128,22 +139,22 @@
 .counter {
     font-size: 50px;
     font-weight: bold;
-    color: #d1d1d1;
+    color: var(--secondary-color);
 }
 
 .counter p {
     font-size: 15px;
-    color: #bcbcbc;
+    color: var(--secondary-color);
 }
 
 
 /* ========== about us ============= */
 #aboutUs{
-    background-color: #000;
+    background-color: var(--primary-color);
     padding: 5px;
 }
 .section-title {
-    color: #fff;
+    color: var(--secondary-color);
     font-size: 35px;
     font-weight: bold;
     margin: 20px 0;
@@ -152,13 +163,13 @@
 
 .about-line {
     width: 280px;
-    border: 2px solid #A970FF;
+    border: 2px solid var(--primary-color);
     margin: 25px auto;
 }
 
 .about-text {
     margin-top: 20px;
-    color: #fff;
+    color: var(--secondary-color);
 }
 
 .about-text h3 {
@@ -166,7 +177,7 @@
 }
 
 .about-text span {
-    color: #A970FF;
+    color: var(--primary-color);
 }
 
 .about-text h5 {
@@ -178,7 +189,7 @@
     height: 100%;
     /* object-fit: cover; */
     border-radius: 10px;
-    border: 2px solid #A970FF;
+    border: 2px solid var(--primary-color);
 }
 
 /*  ============ education experience =========== */
@@ -189,58 +200,60 @@
 }
 
 .exp-desc {
-    color: #fff;
+    color: var(--secondary-color);
 }
 
 .edu-desc {
-    color: #fff;
+    color: var(--secondary-color);
 }
 
 .experience-title,
 .education-title {
     font-weight: 700;
-    color: #6f42c1;
+    color: var(--secondary-color);
     margin-bottom: 20px;
 }
 
 .edu-exp-section-title i {
     font-size: 30px;
     margin-right: 10px;
-    color: #6f42c1;
+    color: var(--secondary-color);
     margin-bottom: 20px;
+    padding-top: 7px;
 }
 
 .card-custom {
-    background-color: #140C1C;
+    background-color: var(--primary-color);
     border: none;
     border-radius: 20px;
     padding: 20px;
     margin-bottom: 20px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 0 5px var(--secondary-color);
     transition: all 0.3s ease;
 }
 
 .card-custom .title {
-    color: #fff;
+    color: var(--secondary-color);
     font-weight: bold;
     font-size: 1.1rem;
 }
 
 .card-custom .date {
     font-weight: bold;
-    color: #6f42c1;
+    color: var(--secondary-color);
 }
 
 .card-custom:hover {
-    background: linear-gradient(to right, #6f42c1, #8a2be2);
-    color: white;
+    background: linear-gradient(to right, var(--secondary-color), var(--secondary-color));
+    color: var(--primary-color);
     transition: 0.5s ease-in;
 }
 
 .card-custom:hover .date,
 .card-custom:hover .title,
 .card-custom:hover div:not(.date):not(.title) {
-    color: #fff;
+    color: var(--primary-color);
+    transition: 0.4s ease-in;
 }
 
 /* =========== recent work/portfolio ============ */
@@ -261,11 +274,11 @@
 
 .portfolio-card {
     position: relative;
-    background-color: #100617;
+    background-color: var(--primary-color);
     border-radius: 20px;
     overflow: hidden;
     padding: 0;
-    color: white;
+    color: var(--secondary-color);
     text-align: center;
 }
 
@@ -287,8 +300,8 @@
     bottom: 0;
     left: 0;
     right: 0;
-    background: linear-gradient(90deg, #A970FF, #A970FF);
-    color: white;
+    background: linear-gradient(90deg, var(--secondary-color), var(--secondary-color));
+    color: var(--primary-color);
     padding: 25px;
     border-radius: 0 0 20px 20px;
     transition: all 0.4s ease-in-out;
@@ -317,8 +330,69 @@
 
 .recent_work-line {
     width: 440px;
-    border: 2px solid #A970FF;
+    border: 2px solid var(--primary-color);
     margin: 25px auto;
+}
+
+/* =========== skill ============ */
+.my-skills-style {
+    background-color: var(--primary-color);
+    font-family: 'Poppins', sans-serif;
+    padding: 60px 20px;
+}
+
+.my-skills-style h2 p{
+    color: var(--secondary-color);
+}
+
+.skill-card {
+    background-color: var(--primary-color);
+    border: 1px solid transparent;
+    border-radius: 20px;
+    padding: 30px 20px;
+    transition: all 0.3s ease;
+    height: 100%;
+    text-align: center;
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 5px var(--secondary-color);
+}
+
+.skill-card:hover {
+    border-color: var(--secondary-color);
+    background-color: var(--secondary-color);
+    box-shadow: 0 0 5px var(--secondary-color);
+}
+
+.skill-icon i {
+    font-size: 60px;
+    color: #797979;
+    transition: color 0.3s ease;
+}
+
+.skill-card:hover .skill-icon i {
+    color: var(--hover-color) !important;
+    transition: 0.5s;
+}
+
+.skill-percentage {
+    font-weight: bold;
+    font-size: 1.25rem;
+    color: var(--secondary-color);
+    margin-top: 10px;
+}
+
+.skill-name {
+    margin-top: 10px;
+    font-size: 1rem;
+    color: var(--secondary-color);
+}
+.skill-card:hover .skill-percentage  {
+    color: var(--primary-color);
+    transition: 0.5s;
+}
+.skill-card:hover .skill-name {
+    color: var(--primary-color);
+    transition: 0.5s;
 }
 
 /* =========== recent blog ============ */
@@ -343,7 +417,7 @@
     bottom: 0;
     left: 0;
     width: 100%;
-    background: #351B67;
+    background: var(--tertiary-color);
     padding: 15px;
 }
 
@@ -351,8 +425,8 @@
     position: absolute;
     top: 10px;
     left: 10px;
-    background: #351B67;
-    color: white;
+    background: var(--tertiary-color);
+    color: var(--secondary-color);
     padding: 5px 10px;
     border-radius: 5px;
     font-size: 12px;
@@ -360,51 +434,51 @@
 }
 
 .blog-card .overlay h5 {
-    color: #fff;
+    color: var(--secondary-color);
     margin-top: 5px;
     font-size: 18px;
 }
 
 .blog-card .overlay small {
-    color: #fff;
+    color: var(--secondary-color);
     display: block;
     margin-bottom: 5px;
 }
 
 .recent-blog-line {
     width: 340px;
-    border: 2px solid #A970FF;
+    border: 2px solid var(--primary-color);
     margin: 25px auto;
 }
 
 /* =========== contact us ============= */
  .contact-section {
-     background-color: #1a1325;
+     background-color: var(--primary-color);
      padding: 40px;
      border-radius: 10px;
  }
 
  .contact-line {
      width: 296px;
-     border: 2px solid #A970FF;
+     border: 2px solid var(--primary-color);
      margin: 25px auto;
  }
 
  .contact-section h2 {
      font-size: 38px;
-     color: #8953F7;
+     color: var(--secondary-color);
      font-weight: bold;
  }
 
  .contact-section p {
-     color: #fff;
+     color: var(--secondary-color);
  }
 
  .contact-btn-custom {
-     background: linear-gradient(45deg, #8953F7, #8953F7);
+     background: linear-gradient(45deg, var(--secondary-color), var(--secondary-color));
      border: none;
      padding: 10px 20px;
-     color: white;
+     color: var(--primary-color);
      border-radius: 25px;
  }
 
@@ -412,9 +486,17 @@
      margin-left: auto;
  }
 
+ .contact-info h5{
+    color: var(--secondary-color);
+ }
+
+ .contact-info p{
+    color: var(--secondary-color);
+ }
+
  .contact-info i {
-     color: #fff;
-     background: #8953F7;
+     color: var(--secondary-color);
+     background: var(--primary-color);
      padding: 10px;
      font-size: 18px;
      margin-right: 10px;
@@ -423,17 +505,17 @@
 
  .contact-us-form .form-control,
  .contact-us-form .form-select {
-     background-color: #050709;
-     color: white;
-     border: 1px solid #050709;
+     background-color: var(--primary-color);
+     color: var(--secondary-color);
+     border: 1px solid var(--secondary-color);
  }
 
  .contact-us-form .form-control:focus,
  .contact-us-form .form-select:focus {
-     border-color: #9333ea;
-     box-shadow: 0 0 4px #9333ea;
-     background-color: #050709;
-     color: white;
+     border-color: var(--secondary-color);
+     box-shadow: 0 0 4px var(--primary-color);
+     background-color: var(--primary-color);
+     color: var(--secondary-color);
  }
  .contact-us-form .form-control::placeholder,
  .contact-us-form .form-select::placeholder,
@@ -450,7 +532,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
+    color: var(--secondary-color);
     text-align: center;
     text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
 }
@@ -462,7 +544,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.6);
+    /* background: rgba(0, 0, 0, 0.6); */
     /* Dark overlay */
 }
 
@@ -481,7 +563,7 @@
 }
 
 .blog-card {
-    background-color: #140C1C;
+    background-color: var(--tertiary-color);
     border-radius: 10px;
     /* padding: 20px; */
 }
@@ -493,8 +575,8 @@
 }
 
 .badge-custom {
-    background-color: #a855f7;
-    color: #fff;
+    background-color: var(--tertiary-color);
+    color: var(--secondary-color);
     padding: 5px 10px;
     border-radius: 10px;
     font-size: 12px;
@@ -502,21 +584,25 @@
 
 .meta-info {
     font-size: 14px;
-    color: #bbb;
+    color: var(--secondary-color);
 }
 
 .meta-info i {
-    color: #6C3FC8;
+    color: var(--primary-color);
 }
 
 .meta-info span {
-    color: #bbb;
+    color: var(--secondary-color);
 }
 
 .sidebar {
-    background: #140C1C;
+    color: var(--secondary-color);
+    background: var(--tertiary-color);
     padding: 20px;
     border-radius: 10px;
+}
+.sidebar-date-title{
+    color: var(--secondary-color);
 }
 
 .recent-post img {
@@ -530,7 +616,7 @@
     display: flex;
     align-items: center;
     gap: 10px;
-    border-bottom: 1px solid #333;
+    border-bottom: 1px solid var(--secondary-color);
     padding-bottom: 10px;
     margin-bottom: 10px;
 }

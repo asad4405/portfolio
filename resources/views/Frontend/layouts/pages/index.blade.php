@@ -38,7 +38,8 @@
                 <div class="text-center row">
                     @foreach ($counters as $value)
                         <div class="col-6 col-md-3">
-                            <h2 class="counter" data-target="{{ $value->count }}" @if ($value->plus == 1) data-plus="true" @endif></h2>
+                            <h2 class="counter" data-target="{{ $value->count }}"
+                                @if ($value->plus == 1) data-plus="true" @endif></h2>
                             <p class="text-white">{{ $value->title }}</p>
                         </div>
                     @endforeach
@@ -47,12 +48,13 @@
         </div>
     </section>
 
+    
+
     <!-- =========== about us section =============== -->
     <section id="aboutUs">
         <div class="container mt-5">
             <div class="about-me">
-                <h2 class="text-center section-title">ABOUT US</h2>
-                <div class="about-line"></div>
+                <h2 class="text-center about-us-title section-title">ABOUT US</h2>
                 <div class="row">
                     <div class="col-12">
                         <div class="about-image">
@@ -70,7 +72,6 @@
 
             <div class="education-experience">
                 <h2 class="section-title">EDUCATION & EXPERIENCE</h2>
-                <div class="exp-line"></div>
                 <div class="main-wrapper">
                     <div class="text-center row text-md-start">
                         <!-- Experience Column -->
@@ -114,9 +115,8 @@
 
     <!-- ====================== works/portfolio =================== -->
     <section>
-        <div class="container py-5 text-center">
+        <div class="container text-center">
             <h2 class="section-title">MY RECENT WORKS</h2>
-            <div class="recent_work-line"></div>
             <!-- Tabs -->
             <ul class="nav nav-pills justify-content-center" id="portfolioTabs">
                 <li class="nav-item">
@@ -180,69 +180,12 @@
     </section>
 
     <!-- ======================= skills ===================== -->
-    <style>
-        .my-skills-style {
-            background-color: #0e061b;
-            color: #c7a0ff;
-            font-family: 'Poppins', sans-serif;
-            padding: 60px 20px;
-        }
-
-        .skill-card {
-            background-color: #1e0c3c;
-            border: 1px solid transparent;
-            border-radius: 20px;
-            padding: 30px 20px;
-            transition: all 0.3s ease;
-            height: 100%;
-            text-align: center;
-        }
-
-        .skill-card:hover {
-            border-color: #915cff;
-            background-color: #2d1561;
-            box-shadow: 0 0 20px rgba(145, 92, 255, 0.4);
-        }
-
-        .skill-icon i {
-            font-size: 60px;
-            color: #797979;
-            transition: color 0.3s ease;
-        }
-
-        .skill-card:hover .skill-icon i {
-            color: var(--hover-color) !important;
-        }
-
-        .skill-percentage {
-            font-weight: bold;
-            font-size: 1.25rem;
-            color: #c7a0ff;
-            margin-top: 10px;
-        }
-
-        .skill-name {
-            margin-top: 10px;
-            font-size: 1rem;
-            color: #b37cff;
-        }
-
-        @media (max-width: 767.98px) {
-            .skill-icon i {
-                font-size: 48px;
-            }
-
-            .skill-card {
-                padding: 20px 15px;
-            }
-        }
-    </style>
 
     <div class="my-skills-style">
 
         <section class="text-center">
-            <h2 class="fw-bold text-light">My Skills</h2>
-            <p class="text-secondary">We put your ideas and thus your wishes in the form of a unique web project that
+            <h2 class="fw-bold">My Skills</h2>
+            <p class="">We put your ideas and thus your wishes in the form of a unique web project that
                 inspires you and your customers.</p>
 
             <div class="container mt-5">
@@ -271,7 +214,6 @@
         <div class="container py-4">
             <div class="contact-heading">
                 <h2 class="text-center section-title">RECENT BLOGS</h2>
-                <div class="recent-blog-line"></div>
             </div>
             <div class="row g-4">
                 @foreach ($blogs as $blog)
@@ -298,7 +240,6 @@
         <div class="container mt-5">
             <div class="contact-heading">
                 <h2 class="text-center section-title">CONTACT US</h2>
-                <div class="contact-line"></div>
             </div>
             <div class="row g-4">
                 <div class="col-lg-6 col-md-6 col-sm-12 contact-section">
