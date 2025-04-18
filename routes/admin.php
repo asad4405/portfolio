@@ -14,6 +14,7 @@ use App\Http\Controllers\Backend\PortfolioCategoryController;
 use App\Http\Controllers\Backend\PortfolioController;
 use App\Http\Controllers\Backend\SkillController;
 use App\Http\Controllers\Backend\SocialMediaController;
+use App\Http\Controllers\Backend\ThemeController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
@@ -25,6 +26,8 @@ Route::resource('banner', BannerController::class, ['names' => 'admin.banner']);
 Route::resource('/admin/about', AboutController::class, ['names' => 'admin.about']);
 // counter
 Route::resource('/counter', CounterController::class, ['names' => 'admin.counter']);
+// counter
+Route::resource('/theme', ThemeController::class, ['names' => 'admin.theme']);
 
 // portfolio category
 Route::resource('portfolio-category', PortfolioCategoryController::class, ['names' => 'admin.portfolio-category']);

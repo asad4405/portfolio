@@ -2,53 +2,53 @@
 @section('maincontent')
     <!-- ============== banner section =============== -->
     <section>
-        <div class="container">
-            <div class="row hero-section">
-                <!-- Left Side: Text -->
-                <div class="col-lg-6 col-md-12 d-flex flex-column justify-content-center hero-text">
-                    <h1>I am {{ $banner->name }}</h1>
-                    <h2>{{ $banner->title }}</h2>
-                    <p>{{ $banner->short_details }}</p>
-                    <div class="row">
-                        <div class="col-12 col-lg-4">
-                            <button class="mt-3 btn btn-custom">
-                                Download CV <i class="fa-solid fa-download"></i>
-                            </button>
-                        </div>
-                        <div class="col-12 col-lg-8">
-                            <div class="mt-4 social-icons">
-                                @foreach ($socialmedias as $socialmedia)
-                                    <a href="{{ $socialmedia->link }}"><i class="{{ $socialmedia->icon }}"></i></a>
-                                @endforeach
+        <div class="background_Bg">
+            <div class="container">
+                <div class="row hero-section">
+                    <!-- Left Side: Text -->
+                    <div class="col-lg-6 col-md-12 d-flex flex-column justify-content-center hero-text">
+                        <h1>I am {{ $banner->name }}</h1>
+                        <h2>{{ $banner->title }}</h2>
+                        <p>{{ $banner->short_details }}</p>
+                        <div class="row">
+                            <div class="col-12 col-lg-4">
+                                <button class="mt-3 btn btn-custom">
+                                    Download CV <i class="fa-solid fa-download"></i>
+                                </button>
+                            </div>
+                            <div class="col-12 col-lg-8">
+                                <div class="mt-4 social-icons">
+                                    @foreach ($socialmedias as $socialmedia)
+                                        <a href="{{ $socialmedia->link }}"><i class="{{ $socialmedia->icon }}"></i></a>
+                                    @endforeach
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- Right Side: Image -->
-                <div class="text-center col-lg-6 col-md-12 hero-image">
-                    <img src="{{ asset($banner->image) }}" alt="Profile Image">
+                    <!-- Right Side: Image -->
+                    <div class="text-center col-lg-6 col-md-12 hero-image">
+                        <img src="{{ asset($banner->image) }}" alt="Profile Image">
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <!-- counter section -->
-        <div class="py-3 counter-section">
-            <div class="container">
-                <div class="text-center row">
-                    @foreach ($counters as $value)
-                        <div class="col-6 col-md-3">
-                            <h2 class="counter" data-target="{{ $value->count }}"
-                                @if ($value->plus == 1) data-plus="true" @endif></h2>
-                            <p class="text-white">{{ $value->title }}</p>
-                        </div>
-                    @endforeach
+            <!-- counter section -->
+            <div class="py-3 counter-section">
+                <div class="container">
+                    <div class="text-center row">
+                        @foreach ($counters as $value)
+                            <div class="col-6 col-md-3">
+                                <h2 class="counter" data-target="{{ $value->count }}"
+                                    @if ($value->plus == 1) data-plus="true" @endif></h2>
+                                <p class="counter-title">{{ $value->title }}</p>
+                            </div>
+                        @endforeach
+                    </div>
                 </div>
             </div>
         </div>
     </section>
-
-    
 
     <!-- =========== about us section =============== -->
     <section id="aboutUs">
@@ -115,32 +115,54 @@
 
     <!-- ====================== works/portfolio =================== -->
     <section>
-        <div class="container text-center">
-            <h2 class="section-title">MY RECENT WORKS</h2>
-            <!-- Tabs -->
-            <ul class="nav nav-pills justify-content-center" id="portfolioTabs">
-                <li class="nav-item">
-                    <button class="nav-link active" data-bs-toggle="pill" data-bs-target="#all">All</button>
-                </li>
-                @foreach ($portfolios as $value)
+        <div class="background_Bg">
+            <div class="container text-center">
+                <h2 class="section-title">MY RECENT WORKS</h2>
+                <!-- Tabs -->
+                <ul class="nav nav-pills justify-content-center" id="portfolioTabs">
                     <li class="nav-item">
-                        <button class="nav-link" data-bs-toggle="pill"
-                            data-bs-target="#{{ $value->category_id }}">UX/UI</button>
+                        <button class="nav-link active" data-bs-toggle="pill" data-bs-target="#all">All</button>
                     </li>
-                @endforeach
-            </ul>
+                    @foreach ($portfolios as $value)
+                        <li class="nav-item">
+                            <button class="nav-link" data-bs-toggle="pill"
+                                data-bs-target="#{{ $value->category_id }}">UX/UI</button>
+                        </li>
+                    @endforeach
+                </ul>
 
-            <!-- Content -->
-            <div class="mt-4 tab-content">
-                <!-- All -->
-                <div class="tab-pane fade show active" id="all">
-                    <div class="row g-4 justify-content-center">
-                        @foreach ($portfolios->take(6) as $value)
-                            <a href="{{ $value->link }}">
+                <!-- Content -->
+                <div class="mt-4 tab-content">
+                    <!-- All -->
+                    <div class="tab-pane fade show active" id="all">
+                        <div class="row g-4 justify-content-center">
+                            @foreach ($portfolios->take(6) as $value)
+                                <a href="{{ $value->link }}">
+                                    <div class="col-md-6 portfolio-item show">
+                                        <div class="portfolio-card">
+                                            <img src="https://themejunction.net/tailwind/gerold/demo/assets/img/portfolio/2.jpg"
+                                                alt="Deloitte">
+                                            <a href="{{ $value->link }}">
+                                                <div class="portfolio-overlay">
+                                                    <div class="portfolio-title">{{ $value->title }}</div>
+                                                    <p class="portfolio-desc">{{ $value->details }}</p>
+                                                    <div class="portfolio-arrow">↗</div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </a>
+                            @endforeach
+                        </div>
+                    </div>
+
+                    <!-- portfolio -->
+                    <div class="tab-pane fade" id="{{ $value->id }}">
+                        <div class="row g-4 justify-content-center">
+                            @foreach ($portfolios as $value)
                                 <div class="col-md-6 portfolio-item show">
                                     <div class="portfolio-card">
-                                        <img src="https://themejunction.net/tailwind/gerold/demo/assets/img/portfolio/2.jpg"
-                                            alt="Deloitte">
+                                        <img src="{{ $value->image }}" alt="UX">
                                         <a href="{{ $value->link }}">
                                             <div class="portfolio-overlay">
                                                 <div class="portfolio-title">{{ $value->title }}</div>
@@ -150,33 +172,12 @@
                                         </a>
                                     </div>
                                 </div>
-                            </a>
-                        @endforeach
-                    </div>
-                </div>
-
-                <!-- portfolio -->
-                <div class="tab-pane fade" id="{{ $value->id }}">
-                    <div class="row g-4 justify-content-center">
-                        @foreach ($portfolios as $value)
-                            <div class="col-md-6 portfolio-item show">
-                                <div class="portfolio-card">
-                                    <img src="{{ $value->image }}" alt="UX">
-                                    <a href="{{ $value->link }}">
-                                        <div class="portfolio-overlay">
-                                            <div class="portfolio-title">{{ $value->title }}</div>
-                                            <p class="portfolio-desc">{{ $value->details }}</p>
-                                            <div class="portfolio-arrow">↗</div>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                        @endforeach
+                            @endforeach
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-
     </section>
 
     <!-- ======================= skills ===================== -->
@@ -211,88 +212,96 @@
 
     <!-- ======================== Blog ======================= -->
     <section>
-        <div class="container py-4">
-            <div class="contact-heading">
-                <h2 class="text-center section-title">RECENT BLOGS</h2>
-            </div>
-            <div class="row g-4">
-                @foreach ($blogs as $blog)
-                    <div class="col-md-4">
-                        <a href="{{ route('blog.details', $blog->slug) }}">
-                            <div class="blog-card">
-                                <span class="tag">{{ $blog->blogcategory->category_name }}</span>
-                                <img src="{{ asset($blog->thumb_img) }}" alt="Blog 1">
-                                <div class="overlay">
-                                    <small>📅 {{ $blog->date }} </small>
-                                    {{-- <small>📅 Oct 01, 2022 </small> --}}
-                                    <h5>{{ $blog->title }}</h5>
+        <div class="background_Bg">
+            <div class="container py-4">
+                <div class="contact-heading">
+                    <h2 class="text-center section-title">RECENT BLOGS</h2>
+                </div>
+                <div class="row g-4">
+                    @foreach ($blogs as $blog)
+                        <div class="col-md-4">
+                            <a href="{{ route('blog.details', $blog->slug) }}">
+                                <div class="blog-card">
+                                    <span class="tag">{{ $blog->blogcategory->category_name }}</span>
+                                    <img src="{{ asset($blog->thumb_img) }}" alt="Blog 1">
+                                    <div class="overlay">
+                                        <small>📅 {{ $blog->date }} </small>
+                                        {{-- <small>📅 Oct 01, 2022 </small> --}}
+                                        <h5>{{ $blog->title }}</h5>
+                                    </div>
                                 </div>
-                            </div>
-                        </a>
-                    </div>
-                @endforeach
+                            </a>
+                        </div>
+                    @endforeach
+                </div>
             </div>
         </div>
     </section>
 
     <!-- ==================== contact us ===================== -->
     <section>
-        <div class="container mt-5">
-            <div class="contact-heading">
-                <h2 class="text-center section-title">CONTACT US</h2>
-            </div>
-            <div class="row g-4">
-                <div class="col-lg-6 col-md-6 col-sm-12 contact-section">
-                    <h2>Let's work together!</h2>
-                    <p>I design and code beautifully simple things and I love what I do. Just simple like that!</p>
-                    <form action="{{ route('contact.submit') }}" method="POST">
-                        @csrf
-                        @if (session('contactus_success'))
-                            <div class="alert alert-success">{{ session('contactus_success') }}</div>
-                        @endif
-                        <div class="row g-3 contact-us-form">
-                            <div class="col-md-6">
-                                <input type="text" name="first_name" class="form-control" placeholder="First name">
-                            </div>
-                            <div class="col-md-6">
-                                <input type="text" name="last_name" class="form-control" placeholder="Last name">
-                            </div>
-                            <div class="col-md-6">
-                                <input type="email" name="email" class="form-control" placeholder="Email address">
-                            </div>
-                            <div class="col-md-6">
-                                <input type="text" name="phone" class="form-control" placeholder="Phone number">
-                            </div>
-                            <div class="col-12">
-                                <textarea name="message" class="form-control" placeholder="Message" rows="4"></textarea>
-                            </div>
-                            <div class="col-12">
-                                <button type="submit" class="btn contact-btn-custom">Send Message</button>
-                            </div>
-                        </div>
-                    </form>
+        <div class="background_Bg">
+            <div class="container pt-5">
+                <div class="contact-heading">
+                    <h2 class="text-center section-title">CONTACT US</h2>
                 </div>
-                <div class="col-lg-1 "></div>
-                <div class="col-lg-5 col-md-6 col-11 d-flex flex-column justify-content-center text-light contact-info">
-                    <div class="mb-4 d-flex align-items-center">
-                        <i class="fas fa-phone"></i>
-                        <div>
-                            <h5>Phone</h5>
-                            <p>{{ $contact->number }}</p>
-                        </div>
+                <div class="row g-4">
+                    <div class="col-lg-6 col-md-6 col-sm-12 contact-section">
+                        <h2>Let's work together!</h2>
+                        <p>I design and code beautifully simple things and I love what I do. Just simple like that!</p>
+                        <form action="{{ route('contact.submit') }}" method="POST">
+                            @csrf
+                            @if (session('contactus_success'))
+                                <div class="alert alert-success">{{ session('contactus_success') }}</div>
+                            @endif
+                            <div class="row g-3 contact-us-form">
+                                <div class="col-md-6">
+                                    <input type="text" name="first_name" class="form-control"
+                                        placeholder="First name">
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="text" name="last_name" class="form-control" placeholder="Last name">
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="email" name="email" class="form-control"
+                                        placeholder="Email address">
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="text" name="phone" class="form-control"
+                                        placeholder="Phone number">
+                                </div>
+                                <div class="col-12">
+                                    <textarea name="message" class="form-control" placeholder="Message" rows="4"></textarea>
+                                </div>
+                                <div class="col-12">
+                                    <button type="submit" class="btn contact-btn-custom">Send Message</button>
+                                </div>
+                            </div>
+                        </form>
                     </div>
-                    <div class="mb-4 d-flex align-items-center">
-                        <i class="fas fa-envelope"></i>
-                        <div>
-                            <h5>Email</h5>
-                            <p>{{ $contact->email }}</p>
+                    <div class="col-lg-1 "></div>
+                    <div
+                        class="col-lg-5 col-md-6 col-11 d-flex flex-column justify-content-center text-light contact-info">
+                        <div class="mb-4 d-flex align-items-center">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <h5>Phone</h5>
+                                <p>{{ $contact->number }}</p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="d-flex align-items-center">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <div>
-                            <h5>Address</h5>
-                            <p>{{ $contact->address }}</p>
+                        <div class="mb-4 d-flex align-items-center">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h5>Email</h5>
+                                <p>{{ $contact->email }}</p>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h5>Address</h5>
+                                <p>{{ $contact->address }}</p>
+                            </div>
                         </div>
                     </div>
                 </div>

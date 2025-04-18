@@ -128,10 +128,19 @@
                 </li>
                 <li class="dropdown">
                     <a href="javascript:;" class="dropdown-toggle">
-                        <span class="micon bi bi-person-circle"></span><span class="mtext">Counter</span>
+                        <span class="micon bi bi-123"></span><span class="mtext">Counter</span>
                     </a>
                     <ul class="submenu">
                         <li><a href="{{ route('admin.counter.index') }}">Counter</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="javascript:;" class="dropdown-toggle">
+                        <span class="micon bi bi-brightness-high "></span><span class="mtext">Theme</span>
+                    </a>
+                    <ul class="submenu">
+                        <li><a href="{{ route('admin.theme.index') }}">Theme</a>
                         </li>
                     </ul>
                 </li>
