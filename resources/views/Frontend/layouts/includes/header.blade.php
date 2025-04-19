@@ -112,8 +112,8 @@
         <div class="light-theme">
 
             <!-- Floating Theme Button -->
-            <button class="theme-btn" onclick="toggleDrawer()">
-                <i class="fa-solid fa-sun"></i>
+            <button class="theme-btn" onclick="toggleDrawer()" id="themeToggleBtn">
+                <i class="fa-solid fa-sun custom-spin"></i>
             </button>
 
             <!-- Theme Drawer -->
@@ -123,8 +123,7 @@
                     @foreach ($themes as $value)
                         @if ($value->theme_type == 'light')
                             <div class="border theme-circle border-dark" onclick="setTheme('{{ $value->slug }}')"
-                                title="{{ $value->slug }}"
-                                style="background-color: {{ $value->bg_color }};">
+                                title="{{ $value->slug }}" style="background-color: {{ $value->bg_color }};">
                             </div>
                         @endif
                     @endforeach
@@ -135,8 +134,7 @@
                     @foreach ($themes as $value)
                         @if ($value->theme_type == 'dark')
                             <div class="border theme-circle border-light" onclick="setTheme('{{ $value->slug }}')"
-                                title="{{ $value->slug }}"
-                                style="background-color: {{ $value->bg_color }};">
+                                title="{{ $value->slug }}" style="background-color: {{ $value->bg_color }};">
                             </div>
                         @endif
                     @endforeach
@@ -175,6 +173,22 @@
                 }
             </script>
             <style>
+                @keyframes custom-spin {
+                    from {
+                        transform: rotate(276.464deg);
+                    }
+
+                    to {
+                        transform: rotate(636.464deg);
+                        /* 360° more than the start angle */
+                    }
+                }
+
+                .custom-spin {
+                    display: inline-block;
+                    animation: custom-spin 2s linear infinite;
+                }
+
                 :root {
                     --primary-color: #0F0715;
                     --secondary-color: #fff;

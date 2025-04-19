@@ -19,7 +19,8 @@
                             <div class="col-12 col-lg-8">
                                 <div class="mt-4 social-icons">
                                     @foreach ($socialmedias as $socialmedia)
-                                        <a href="{{ $socialmedia->link }}"><i class="{{ $socialmedia->icon }}"></i></a>
+                                        <a href="{{ $socialmedia->link }}" target="_blank"><i
+                                                class="{{ $socialmedia->icon }}"></i></a>
                                     @endforeach
                                 </div>
                             </div>
@@ -118,15 +119,20 @@
         <div class="background_Bg">
             <div class="container text-center">
                 <h2 class="section-title">MY RECENT WORKS</h2>
+
                 <!-- Tabs -->
                 <ul class="nav nav-pills justify-content-center" id="portfolioTabs">
                     <li class="nav-item">
                         <button class="nav-link active" data-bs-toggle="pill" data-bs-target="#all">All</button>
                     </li>
-                    @foreach ($portfolios as $value)
+                    @php
+                        $categories = $portfolios->pluck('category')->unique('id');
+                    @endphp
+                    @foreach ($categories as $category)
                         <li class="nav-item">
-                            <button class="nav-link" data-bs-toggle="pill"
-                                data-bs-target="#{{ $value->category_id }}">UX/UI</button>
+                            <button class="nav-link" data-bs-toggle="pill" data-bs-target="#cat-{{ $category->id }}">
+                                {{ $category->category_name }}
+                            </button>
                         </li>
                     @endforeach
                 </ul>
@@ -137,33 +143,10 @@
                     <div class="tab-pane fade show active" id="all">
                         <div class="row g-4 justify-content-center">
                             @foreach ($portfolios->take(6) as $value)
-                                <a href="{{ $value->link }}">
-                                    <div class="col-md-6 portfolio-item show">
-                                        <div class="portfolio-card">
-                                            <img src="https://themejunction.net/tailwind/gerold/demo/assets/img/portfolio/2.jpg"
-                                                alt="Deloitte">
-                                            <a href="{{ $value->link }}">
-                                                <div class="portfolio-overlay">
-                                                    <div class="portfolio-title">{{ $value->title }}</div>
-                                                    <p class="portfolio-desc">{{ $value->details }}</p>
-                                                    <div class="portfolio-arrow">↗</div>
-                                                </div>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </a>
-                            @endforeach
-                        </div>
-                    </div>
-
-                    <!-- portfolio -->
-                    <div class="tab-pane fade" id="{{ $value->id }}">
-                        <div class="row g-4 justify-content-center">
-                            @foreach ($portfolios as $value)
-                                <div class="col-md-6 portfolio-item show">
+                                <div class="col-md-6 col-lg-4">
                                     <div class="portfolio-card">
-                                        <img src="{{ $value->image }}" alt="UX">
-                                        <a href="{{ $value->link }}">
+                                        <img src="{{ asset($value->image) }}" alt="{{ $value->title }}">
+                                        <a href="{{ $value->link }}" target="_blank">
                                             <div class="portfolio-overlay">
                                                 <div class="portfolio-title">{{ $value->title }}</div>
                                                 <p class="portfolio-desc">{{ $value->details }}</p>
@@ -175,10 +158,33 @@
                             @endforeach
                         </div>
                     </div>
+
+                    <!-- Category Tabs -->
+                    @foreach ($categories as $category)
+                        <div class="tab-pane fade" id="cat-{{ $category->id }}">
+                            <div class="row g-4 justify-content-center">
+                                @foreach ($portfolios->where('category_id', $category->id) as $value)
+                                    <div class="col-md-6 col-lg-4">
+                                        <div class="portfolio-card">
+                                            <img src="{{ asset($value->image) }}" alt="{{ $value->title }}">
+                                            <a href="{{ $value->link }}">
+                                                <div class="portfolio-overlay">
+                                                    <div class="portfolio-title">{{ $value->title }}</div>
+                                                    <p class="portfolio-desc">{{ $value->details }}</p>
+                                                    <div class="portfolio-arrow">↗</div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                @endforeach
+                            </div>
+                        </div>
+                    @endforeach
                 </div>
             </div>
         </div>
     </section>
+
 
     <!-- ======================= skills ===================== -->
 
@@ -209,6 +215,91 @@
     </div>
 
 
+    <!-- ==================== Testimonials =================== -->
+    <section>
+        <div class="background_Bg">
+            <div class="container py-2">
+                <div class="row align-items-center">
+                    <!-- Left Column -->
+                    <div class="mb-4 col-lg-6 col-12">
+                        <h2 class="testi-title">My Client's Stories</h2>
+                        <p class="testi-title-des">Empowering people in a new digital journey with my super services</p>
+                    </div>
+
+                    <!-- Right Column -->
+                    <div class="col-lg-6 col-12">
+
+                        <!-- Desktop view -->
+                        <div id="testimonialCarouselDesktop" class="carousel slide d-none d-md-block"
+                            data-bs-ride="carousel">
+                            <div class="carousel-inner">
+                                <!-- Slide  -->
+                                @foreach ($testimonials as $value)
+                                    <div class="carousel-item {{ $loop->first ? 'active' : '' }}">
+                                        <div class="row g-3">
+                                            <div class="col-12">
+                                                <div class="testimonial-card">
+                                                    <div class="quote-icon">❝</div>
+                                                    <p>“{{ $value->details }}”</p>
+                                                    <div class="testimonial-name">{{ $value->client_name }}</div>
+                                                    <small class="testi-title-des">{{ $value->client_sector }}</small>
+                                                    <img src="{{ asset($value->image) }}" alt="Testimonial Img">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                @endforeach
+                            </div>
+                            <!-- Desktop Indicators -->
+                            <div class="carousel-indicators position-static">
+                                @foreach ($testimonials as $testimonial)
+                                    <button type="button" data-bs-target="#testimonialCarouselDesktop"
+                                        data-bs-slide-to="{{ $loop->index }}"
+                                        class="{{ $loop->first ? 'active' : '' }}"
+                                        aria-current="{{ $loop->first ? 'true' : 'false' }}"
+                                        aria-label="Slide {{ $loop->iteration }}">
+                                    </button>
+                                @endforeach
+                            </div>
+
+                        </div>
+
+                        <!-- Mobile view -->
+                        <div id="testimonialCarouselMobile" class="carousel slide d-block d-md-none"
+                            data-bs-ride="carousel">
+                            <div class="carousel-inner">
+                                <!-- Slide 1 -->
+                                @foreach ($testimonials as $testimonial)
+                                    <div class="carousel-item {{ $loop->first ? 'active' : '' }}">
+                                        <div class="text-center testimonial-card">
+                                            <div class="quote-icon">❝</div>
+                                            <p>“{{ $testimonial->details }}”</p>
+                                            <div class="testimonial-name">{{ $testimonial->client_name }}</div>
+                                            <small class="testi-title-des">{{ $testimonial->client_sector }}</small>
+                                            <img src="{{ asset($testimonial->image) }}" alt="Testimonial Img">
+                                        </div>
+                                    </div>
+                                @endforeach
+                            </div>
+                            <!-- Mobile Indicators -->
+                            <div class="carousel-indicators position-static">
+                                @foreach ($testimonials as $testimonial)
+                                    <button type="button" data-bs-target="#testimonialCarouselMobile"
+                                        data-bs-slide-to="{{ $loop->index }}"
+                                        class="{{ $loop->first ? 'active' : '' }}"
+                                        aria-current="{{ $loop->first ? 'true' : 'false' }}"
+                                        aria-label="Slide {{ $loop->iteration }}">
+                                    </button>
+                                @endforeach
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- ======================== Blog ======================= -->
     <section>

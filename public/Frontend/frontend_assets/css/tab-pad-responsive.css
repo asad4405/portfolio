@@ -68,11 +68,16 @@
     .about-image img {
         height: 100%;
     }
-        /*  ============ education experience =========== */
+    /*  ============ education experience =========== */
         .edu-exp-section-title {
             display: flex;
             align-items: center;
             gap: 10px;
+        }
+    /* ======== testimonial ====== */
+        .carousel-inner .row>div {
+            flex: 0 0 100%;
+            max-width: 100%;
         }
     /* ========= recent works ========== */
     .portfolio-overlay {

@@ -4,35 +4,43 @@
     <div class="pd-20 card-box mb-30">
         <div class="clearfix">
             <div class="my-2 pull-left">
-                <h4 class="text-blue h4">Edit Experience Section</h4>
+                <h4 class="text-blue h4">Create Testimonial Section</h4>
             </div>
         </div>
-        <form action="{{ route('admin.experience.update',$experience->id) }}" method="POST" enctype="multipart/form-data">
+        <form action="{{ route('admin.testimonial.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
-            @method('PUT')
             <div class="form-group row">
-                <label class="col-sm-12 col-md-2 col-form-label">Icon</label>
+                <label class="col-sm-12 col-md-2 col-form-label">Company Name / Client Name</label>
                 <div class="col-sm-12 col-md-10">
-                    <input class="form-control" name="icon" type="text" value="{{ $experience->icon }}" />
-                    @error('icon')
+                    <input class="form-control" name="client_name" type="text" value="{{ old('client_name') }}" />
+                    @error('client_name')
                         <span class="text-danger">{{ $message }}</span>
                     @enderror
                 </div>
             </div>
             <div class="form-group row">
-                <label class="col-sm-12 col-md-2 col-form-label">Experience Position</label>
+                <label class="col-sm-12 col-md-2 col-form-label"> Client Sector</label>
                 <div class="col-sm-12 col-md-10">
-                    <input class="form-control" name="exp_position" type="text" value="{{ $experience->exp_position }}" required />
-                    @error('exp_position')
+                    <input class="form-control" name="client_sector" type="text" value="{{ old('client_sector') }}" />
+                    @error('client_sector')
                         <span class="text-danger">{{ $message }}</span>
                     @enderror
                 </div>
             </div>
             <div class="form-group row">
-                <label class="col-sm-12 col-md-2 col-form-label">Details</label>
+                <label class="col-sm-12 col-md-2 col-form-label"> Details</label>
                 <div class="col-sm-12 col-md-10">
-                    <input class="form-control" name="details" type="text" value="{{ $experience->details }}" required />
+                    <input class="form-control" name="details" type="text" value="{{ old('details') }}" />
                     @error('details')
+                        <span class="text-danger">{{ $message }}</span>
+                    @enderror
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-12 col-md-2 col-form-label"> Image</label>
+                <div class="col-sm-12 col-md-10">
+                    <input class="form-control" name="image" type="file" />
+                    @error('image')
                         <span class="text-danger">{{ $message }}</span>
                     @enderror
                 </div>
@@ -40,7 +48,7 @@
             <div class="form-group row">
                 <label class="col-sm-12 col-md-2 col-form-label">Position (optional)</label>
                 <div class="col-sm-12 col-md-10">
-                    <input class="form-control" name="position" type="text" value="{{ $experience->position }}" />
+                    <input class="form-control" name="position" type="text" value="{{ old('position') }}" />
                 </div>
             </div>
 
@@ -55,7 +63,7 @@
             </div>
             <div class=" btn-list">
                 <button type="submit" class="btn btn-primary active focus">
-                    Update Experience
+                    Add Testimonial
                 </button>
             </div>
         </form>

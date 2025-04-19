@@ -64,8 +64,7 @@ class ExperienceController extends Controller
     public function update(Request $request, string $id)
     {
         $experience = Experience::find($id);
-
-        $experience = new Experience();
+        
         $experience->icon = $request->icon;
         $experience->exp_position = $request->exp_position;
         $experience->details = $request->details;

@@ -14,6 +14,7 @@ use App\Http\Controllers\Backend\PortfolioCategoryController;
 use App\Http\Controllers\Backend\PortfolioController;
 use App\Http\Controllers\Backend\SkillController;
 use App\Http\Controllers\Backend\SocialMediaController;
+use App\Http\Controllers\Backend\TestimonialController;
 use App\Http\Controllers\Backend\ThemeController;
 use Illuminate\Support\Facades\Route;
 
@@ -51,5 +52,7 @@ Route::get('/contact-us/show/{id}',[ContactController::class,'contactus_show'])-
 Route::resource('education', EducationController::class, ['names' => 'admin.education']);
 // education
 Route::resource('experience', ExperienceController::class, ['names' => 'admin.experience']);
+// testimonial
+Route::resource('testimonial', TestimonialController::class, ['names' => 'admin.testimonial']);
 // skill
 Route::resource('skill', SkillController::class, ['names' => 'admin.skill']);

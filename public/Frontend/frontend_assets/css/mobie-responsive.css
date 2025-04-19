@@ -45,7 +45,7 @@
     }
     .about-us-title.section-title{
         margin-bottom: 0 !important;
-        
+
     }
 
     .about-line {
@@ -85,6 +85,9 @@
     /* ========== recent view ========== */
     .recent-blog-line {
         width: 210px;
+    }
+    .another-page-heading {
+        height: 160px;
     }
 
     /* =========== contact ============= */
@@ -128,4 +131,5 @@
         margin-top: 20px;
         padding: 12px;
     }
+
 }

@@ -15,6 +15,7 @@ use App\Models\Portfolio;
 use App\Models\PortfolioCategory;
 use App\Models\Skill;
 use App\Models\SocialMedia;
+use App\Models\Testimonial;
 use Illuminate\Http\Request;
 
 class FrontendController extends Controller
@@ -29,9 +30,10 @@ class FrontendController extends Controller
         $experiences = Experience::where('status', 1)->orderBy('position', 'asc')->get();
         $portfolios = Portfolio::where('status', 1)->orderBy('position', 'asc')->get();
         $skills = Skill::where('status', 1)->orderBy('position', 'asc')->get();
+        $testimonials = Testimonial::where('status', 1)->orderBy('position', 'asc')->get();
         $blogs = Blog::where('status', 1)->latest()->take(3)->get();
         $contact = Contact::first();
-        return view('Frontend.layouts.pages.index', compact('banner', 'about', 'socialmedias', 'counters', 'eductions', 'experiences', 'portfolios', 'skills', 'blogs', 'contact'));
+        return view('Frontend.layouts.pages.index', compact('banner', 'about', 'socialmedias', 'counters', 'eductions', 'experiences', 'portfolios', 'skills', 'testimonials', 'blogs', 'contact'));
     }
 
     public function blog_details($slug)
