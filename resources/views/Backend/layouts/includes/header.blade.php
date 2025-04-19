@@ -16,6 +16,7 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('public/Backend/backend_asset/vendors') }}/styles/core.css" />
     <link rel="stylesheet" type="text/css"href="{{ asset('public/Backend/backend_asset/vendors') }}/styles/icon-font.min.css" />
     <link rel="stylesheet" type="text/css" href="{{ asset('public/Backend/backend_asset/vendors') }}/styles/style.css" />
+    <link rel="shortcut icon" href="{{ asset($generalsetting->favicon) }}" type="image/x-icon" />
 </head>
 
 <body>

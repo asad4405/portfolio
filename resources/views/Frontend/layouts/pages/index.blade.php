@@ -310,7 +310,7 @@
                 </div>
                 <div class="row g-4">
                     @foreach ($blogs as $blog)
-                        <div class="col-md-4">
+                        <div class="col-md-3 blog_col">
                             <a href="{{ route('blog.details', $blog->slug) }}">
                                 <div class="blog-card">
                                     <span class="tag">{{ $blog->blogcategory->category_name }}</span>

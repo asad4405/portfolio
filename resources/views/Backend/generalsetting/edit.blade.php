@@ -29,6 +29,15 @@
                 </div>
             </div>
             <div class="form-group row">
+                <label class="col-sm-12 col-md-2 col-form-label">Dark Logo</label>
+                <div class="col-sm-12 col-md-10">
+                    <input class="form-control" name="dark_logo" type="file" />
+                    <div class="mt-2">
+                        <img src="{{ asset($generalsetting->dark_logo) }}" alt="" width="70">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group row">
                 <label class="col-sm-12 col-md-2 col-form-label">Favicon</label>
                 <div class="col-sm-12 col-md-10">
                     <input class="form-control" name="favicon" type="file" />

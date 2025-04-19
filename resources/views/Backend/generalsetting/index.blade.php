@@ -20,6 +20,7 @@
                         <th class="table-plus datatable-nosort">SL</th>
                         <th>Name</th>
                         <th>Logo</th>
+                        <th>Dark Logo</th>
                         <th>Favicon</th>
                         <th>Status</th>
                         <th class="datatable-nosort">Action</th>
@@ -31,6 +32,7 @@
                             <td class="table-plus">{{ $loop->index + 1 }}</td>
                             <td>{{ $value->name }}</td>
                             <td><img src="{{ asset($value->logo) }}" alt="" width="70"></td>
+                            <td><img src="{{ asset($value->dark_logo) }}" alt="" width="70"></td>
                             <td><img src="{{ asset($value->favicon) }}" alt="" width="70"></td>
                             <td>
                                 @if ($value->status == 1)

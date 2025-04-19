@@ -3,6 +3,10 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Blog;
+use App\Models\ContactUs;
+use App\Models\Portfolio;
+use App\Models\Testimonial;
 use Illuminate\Http\Request;
 
 class DashboardController extends Controller
@@ -12,7 +16,11 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        return view('Backend.admin.dashboard');
+        $blogs = Blog::where('status', 1)->latest()->get();
+        $contact_uses = ContactUs::latest()->get();
+        $portfolios = Portfolio::where('status', 1)->latest()->get();
+        $testimonials = Testimonial::where('status', 1)->latest()->get();
+        return view('Backend.admin.dashboard', compact('blogs', 'contact_uses', 'portfolios', 'testimonials'));
     }
 
     /**

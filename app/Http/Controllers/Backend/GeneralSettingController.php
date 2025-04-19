@@ -72,7 +72,21 @@ class GeneralSettingController extends Controller
 
             $generalsetting->logo   = $imagePath . $imageName;
         }
-        
+
+        if ($request->file('dark_logo')) {
+            $image = $request->file('dark_logo');
+
+            if (!is_null($generalsetting->dark_logo) && file_exists($generalsetting->dark_logo)) {
+                unlink($generalsetting->dark_logo);
+            }
+
+            $imageName          = 'dark_logo-'.microtime('.') . '.' . $image->getClientOriginalExtension();
+            $imagePath          = 'public/Backend/uploads/generalsetting/';
+            $image->move($imagePath, $imageName);
+
+            $generalsetting->dark_logo   = $imagePath . $imageName;
+        }
+
         if ($request->file('favicon')) {
             $image2 = $request->file('favicon');
 

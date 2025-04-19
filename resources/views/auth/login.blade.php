@@ -33,9 +33,9 @@
     <div class="login-header box-shadow">
         <div class="container-fluid d-flex justify-content-between align-items-center">
             <div class="brand-logo">
-                <a href="login.html">
-                    <img src="{{ asset('public/Backend/backend_asset/vendors') }}/images/deskapp-logo.svg"
-                        alt="" />
+                <a href="{{ route('login') }}">
+                    <img src="{{ asset($generalsetting->dark_logo) }}"
+                        alt="" width="130" />
                 </a>
             </div>
             <div class="login-menu">
