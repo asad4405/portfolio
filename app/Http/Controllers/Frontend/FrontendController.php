@@ -30,7 +30,7 @@ class FrontendController extends Controller
         $experiences = Experience::where('status', 1)->orderBy('position', 'asc')->get();
         $portfolios = Portfolio::where('status', 1)->orderBy('position', 'asc')->get();
         $skills = Skill::where('status', 1)->orderBy('position', 'asc')->get();
-        $testimonials = Testimonial::where('status', 1)->orderBy('position', 'asc')->get();
+        $testimonials = Testimonial::where('status', 1)->orderBy('position', 'asc')->take(4)->get();
         $blogs = Blog::where('status', 1)->latest()->take(3)->get();
         $contact = Contact::first();
         return view('Frontend.layouts.pages.index', compact('banner', 'about', 'socialmedias', 'counters', 'eductions', 'experiences', 'portfolios', 'skills', 'testimonials', 'blogs', 'contact'));
@@ -62,5 +62,34 @@ class FrontendController extends Controller
         $contact_us->save();
 
         return back()->with('contactus_success', 'Message send Successfully!');
+    }
+
+    public function about()
+    {
+        $about = About::where('status', 1)->first();
+        $contact = Contact::first();
+        $eductions = Education::where('status', 1)->latest()->get();
+        $experiences = Experience::where('status', 1)->orderBy('position', 'asc')->get();
+        return view('Frontend.layouts.pages.about', compact('about', 'contact', 'eductions', 'experiences'));
+    }
+
+    public function portfolio()
+    {
+        $portfolios = Portfolio::where('status', 1)->orderBy('position', 'asc')->get();
+        $contact = Contact::first();
+        $skills = Skill::where('status', 1)->orderBy('position', 'asc')->get();
+        return view('Frontend.layouts.pages.portfolio', compact('portfolios', 'contact', 'skills'));
+    }
+
+    public function blog()
+    {
+        $blogs = Blog::where('status', 1)->latest()->get();
+        return view('Frontend.layouts.pages.blog', compact('blogs'));
+    }
+
+    public function testimonial()
+    {
+        $testimonials = Testimonial::where('status', 1)->orderBy('position', 'asc')->get();
+        return view('Frontend.layouts.pages.testimonial', compact('testimonials'));
     }
 }

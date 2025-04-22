@@ -37,12 +37,12 @@
                 <div class="collapse navbar-collapse justify-content-end">
                     <ul class="navbar-nav">
                         <li class="nav-item"><a class="nav-link active" href="{{ route('index') }}">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#">About</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#">Services</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#">Portfolio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{ route('about') }}">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{ route('portfolio') }}">Portfolios</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{ route('testimonial') }}">Testimonials</a></li>
                         <!-- Blog Dropdown (Hover) -->
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#">Blog</a>
+                            <a class="nav-link dropdown-toggle" href="{{ route('blog') }}">Blog</a>
                             <ul class="dropdown-menu navbar-submenu">
                                 @foreach ($blogs as $blog)
                                     <li><a class="dropdown-item"
@@ -80,10 +80,10 @@
             <div class="offcanvas-body">
                 <ul class="navbar-nav">
                     <li class="nav-item"><a class="nav-link" href="{{ route('index') }}">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#aboutUs">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Services</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Portfolios</a></li>
-                    <!-- Collapsible Blog Submenu -->
+                    <li class="nav-item"><a class="nav-link" href="{{ route('about') }}">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ route('portfolio') }}">Portfolios</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ route('testimonial') }}">Testimonials</a></li>
+                    <!-- Blog Submenu -->
                     <li class="nav-item">
                         <a class="nav-link" data-bs-toggle="collapse" href="#blogSubmenu" role="button">
                             Blog
