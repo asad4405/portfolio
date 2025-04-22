@@ -39,3 +39,44 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // ==================== counter end ======================= //
+
+// =================== animation start ======================== //
+document.addEventListener("DOMContentLoaded", function () {
+    const elements = document.querySelectorAll(".moveup-animation");
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+            } else {
+                entry.target.classList.remove("visible");
+            }
+        });
+    }, {
+        threshold: 0.5
+    });
+
+    elements.forEach(el => observer.observe(el));
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+    const elements = document.querySelectorAll(".moveup-animation");
+
+    const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("visible");
+                } else {
+                    entry.target.classList.remove("visible");
+                }
+            });
+        },
+        {
+            threshold: 0.5, // Trigger when 10% is visible
+        }
+    );
+
+    elements.forEach((el) => observer.observe(el));
+});
+// ===================== animation end ======================= //

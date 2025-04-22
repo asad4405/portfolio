@@ -7,17 +7,17 @@
                 <div class="row hero-section">
                     <!-- Left Side: Text -->
                     <div class="col-lg-6 col-md-12 d-flex flex-column justify-content-center hero-text">
-                        <h1>I am {{ $banner->name }}</h1>
-                        <h2>{{ $banner->title }}</h2>
-                        <p>{{ $banner->short_details }}</p>
+                        <h1 class="moveup-animation delay-0">I am {{ $banner->name }}</h1>
+                        <h2 class="moveup-animation delay-1"> {{ $banner->title }}</h2>
+                        <p class="moveup-animation delay-2"> {{ $banner->short_details }}</p>
                         <div class="row">
                             <div class="col-12 col-lg-4">
-                                <button class="mt-3 btn btn-custom">
+                                <button class="mt-3 btn cv-button btn-custom moveup-animation delay-3">
                                     Download CV <i class="fa-solid fa-download"></i>
                                 </button>
                             </div>
                             <div class="col-12 col-lg-8">
-                                <div class="mt-4 social-icons">
+                                <div class="mt-4 social-icons moveup-animation delay-3">
                                     @foreach ($socialmedias as $socialmedia)
                                         <a href="{{ $socialmedia->link }}" target="_blank"><i
                                                 class="{{ $socialmedia->icon }}"></i></a>
@@ -28,7 +28,7 @@
                     </div>
 
                     <!-- Right Side: Image -->
-                    <div class="text-center col-lg-6 col-md-12 hero-image">
+                    <div class="text-center col-lg-6 col-md-12 hero-image moveup-animation delay-0">
                         <img src="{{ asset($banner->image) }}" alt="Profile Image">
                     </div>
                 </div>
@@ -38,8 +38,8 @@
             <div class="py-3 counter-section">
                 <div class="container">
                     <div class="text-center row">
-                        @foreach ($counters as $value)
-                            <div class="col-6 col-md-3">
+                        @foreach ($counters as $index => $value)
+                            <div class="col-6 col-md-3 moveup-animation">
                                 <h2 class="counter" data-target="{{ $value->count }}"
                                     @if ($value->plus == 1) data-plus="true" @endif></h2>
                                 <p class="counter-title">{{ $value->title }}</p>
@@ -55,35 +55,35 @@
     <section id="aboutUs">
         <div class="container mt-5">
             <div class="about-me">
-                <h2 class="text-center about-us-title section-title">ABOUT US</h2>
+                <h2 class="text-center about-us-title section-title moveup-animation">ABOUT ME</h2>
                 <div class="row">
                     <div class="col-12">
-                        <div class="about-image">
+                        <div class="about-image moveup-animation delay-0">
                             <img src="{{ asset($about->image) }}" alt="">
                         </div>
                     </div>
-                    <div class="about-text">
-                        <h3>I am <span>{{ $about->name }}</span></h3>
-                        <h5>{{ $about->designation }}</h5>
+                    <div class="about-text ">
+                        <h3 class="moveup-animation delay-1">I am <span>{{ $about->name }}</span></h3>
+                        <h5 class="moveup-animation delay-2">{{ $about->designation }}</h5>
                         <hr>
-                        <p>{{ $about->details }}</p>
+                        <p class="moveup-animation delay-3">{{ $about->details }}</p>
                     </div>
                 </div>
             </div>
 
             <div class="education-experience">
-                <h2 class="section-title">EDUCATION & EXPERIENCE</h2>
+                <h2 class="section-title moveup-animation delay-0">EDUCATION & EXPERIENCE</h2>
                 <div class="main-wrapper">
                     <div class="text-center row text-md-start">
                         <!-- Experience Column -->
-                        <div class="mb-4 col-md-6">
+                        <div class="mb-4 col-md-6 moveup-animation delay-1">
                             <div class="edu-exp-section-title d-flex">
                                 <i class="fa-solid fa-graduation-cap"></i>
                                 <h2 class="education-title">My Education</h2>
                             </div>
 
                             @foreach ($eductions as $education)
-                                <div class="card-custom">
+                                <div class="card-custom ">
                                     <div class="date">{{ $education->year_title }}</div>
                                     <div class="title">{{ $education->course_name }}</div>
                                     <div class="exp-desc">{{ $education->institute_name }}</div>
@@ -93,14 +93,14 @@
                         </div>
 
                         <!-- Education Column -->
-                        <div class="col-md-6">
+                        <div class="col-md-6 moveup-animation delay-2">
                             <div class="edu-exp-section-title d-flex">
                                 <i class="fa-solid fa-briefcase"></i>
-                                <h2 class="experience-title">My Experience</h2>
+                                <h2 class="experience-title ">My Experience</h2>
                             </div>
 
-                            @foreach ($experiences as $experience)
-                                <div class="card-custom">
+                            @foreach ($experiences as $key=> $experience)
+                                <div class="card-custom ">
                                     <div class="date"><i class="{{ $experience->icon }}"></i></div>
                                     <div class="title">{{ $experience->exp_position }}</div>
                                     <div class="edu-desc">{{ $experience->details }}</div>
@@ -118,18 +118,18 @@
     <section>
         <div class="background_Bg">
             <div class="container text-center">
-                <h2 class="section-title">MY RECENT WORKS</h2>
+                <h2 class="section-title moveup-animation delay-0">MY RECENT WORKS</h2>
 
                 <!-- Tabs -->
                 <ul class="nav nav-pills justify-content-center" id="portfolioTabs">
-                    <li class="nav-item">
+                    <li class="nav-item moveup-animation delay-1">
                         <button class="nav-link active" data-bs-toggle="pill" data-bs-target="#all">All</button>
                     </li>
                     @php
                         $categories = $portfolios->pluck('category')->unique('id');
                     @endphp
                     @foreach ($categories as $category)
-                        <li class="nav-item">
+                        <li class="nav-item moveup-animation delay-1">
                             <button class="nav-link" data-bs-toggle="pill" data-bs-target="#cat-{{ $category->id }}">
                                 {{ $category->category_name }}
                             </button>
@@ -145,7 +145,8 @@
                             @foreach ($portfolios->take(6) as $value)
                                 <div class="col-md-6 col-lg-4">
                                     <div class="portfolio-card">
-                                        <img src="{{ asset($value->image) }}" alt="{{ $value->title }}">
+                                        <img class="moveup-animation delay-3" src="{{ asset($value->image) }}"
+                                            alt="{{ $value->title }}">
                                         <a href="{{ $value->link }}" target="_blank">
                                             <div class="portfolio-overlay">
                                                 <div class="portfolio-title">{{ $value->title }}</div>
@@ -166,7 +167,8 @@
                                 @foreach ($portfolios->where('category_id', $category->id) as $value)
                                     <div class="col-md-6 col-lg-4">
                                         <div class="portfolio-card">
-                                            <img src="{{ asset($value->image) }}" alt="{{ $value->title }}">
+                                            <img class="moveup-animation delay-0" src="{{ asset($value->image) }}"
+                                                alt="{{ $value->title }}">
                                             <a href="{{ $value->link }}">
                                                 <div class="portfolio-overlay">
                                                     <div class="portfolio-title">{{ $value->title }}</div>
@@ -191,11 +193,12 @@
     <div class="my-skills-style">
 
         <section class="text-center">
-            <h2 class="fw-bold">My Skills</h2>
-            <p class="">We put your ideas and thus your wishes in the form of a unique web project that
+            <h2 class="fw-bold moveup-animation delay-0">MY SKILLS</h2>
+            <p class="moveup-animation delay-1">We put your ideas and thus your wishes in the form of a unique web project
+                that
                 inspires you and your customers.</p>
 
-            <div class="container mt-5">
+            <div class="container mt-5 moveup-animation delay-2">
                 <div class="row g-3 justify-content-center">
 
                     @foreach ($skills as $skill)
@@ -222,16 +225,17 @@
                 <div class="row align-items-center">
                     <!-- Left Column -->
                     <div class="mb-4 col-lg-6 col-12">
-                        <h2 class="testi-title">My Client's Stories</h2>
-                        <p class="testi-title-des">Empowering people in a new digital journey with my super services</p>
+                        <h2 class="testi-title moveup-animation delay-0">My Client's Stories</h2>
+                        <p class="testi-title-des moveup-animation delay-1">Empowering people in a new digital journey with
+                            my super services</p>
                     </div>
 
                     <!-- Right Column -->
                     <div class="col-lg-6 col-12">
 
                         <!-- Desktop view -->
-                        <div id="testimonialCarouselDesktop" class="carousel slide d-none d-md-block"
-                            data-bs-ride="carousel">
+                        <div id="testimonialCarouselDesktop"
+                            class="carousel slide d-none d-md-block moveup-animation delay-0" data-bs-ride="carousel">
                             <div class="carousel-inner">
                                 <!-- Slide  -->
                                 @foreach ($testimonials as $value)
@@ -265,8 +269,8 @@
                         </div>
 
                         <!-- Mobile view -->
-                        <div id="testimonialCarouselMobile" class="carousel slide d-block d-md-none"
-                            data-bs-ride="carousel">
+                        <div id="testimonialCarouselMobile"
+                            class="carousel slide d-block d-md-none moveup-animation delay-0" data-bs-ride="carousel">
                             <div class="carousel-inner">
                                 <!-- Slide 1 -->
                                 @foreach ($testimonials as $testimonial)
@@ -306,11 +310,11 @@
         <div class="background_Bg">
             <div class="container py-4">
                 <div class="contact-heading">
-                    <h2 class="text-center section-title">RECENT BLOGS</h2>
+                    <h2 class="text-center section-title moveup-animation delay-0">RECENT BLOGS</h2>
                 </div>
                 <div class="row g-4">
                     @foreach ($blogs as $blog)
-                        <div class="col-md-3 blog_col">
+                        <div class="col-md-3 blog_col moveup-animation delay-1">
                             <a href="{{ route('blog.details', $blog->slug) }}">
                                 <div class="blog-card">
                                     <span class="tag">{{ $blog->blogcategory->category_name }}</span>
@@ -334,13 +338,14 @@
         <div class="background_Bg">
             <div class="container pt-5">
                 <div class="contact-heading">
-                    <h2 class="text-center section-title">CONTACT US</h2>
+                    <h2 class="text-center section-title moveup-animation delay-0">CONTACT US</h2>
                 </div>
                 <div class="row g-4">
                     <div class="col-lg-6 col-md-6 col-sm-12 contact-section">
-                        <h2>Let's work together!</h2>
-                        <p>I design and code beautifully simple things and I love what I do. Just simple like that!</p>
-                        <form action="{{ route('contact.submit') }}" method="POST">
+                        <h2 class="moveup-animation delay-2">Let's work together!</h2>
+                        <p class="moveup-animation delay-3">I design and code beautifully simple things and I love what I
+                            do. Just simple like that!</p>
+                        <form action="{{ route('contact.submit') }}" method="POST" class="moveup-animation delay-4">
                             @csrf
                             @if (session('contactus_success'))
                                 <div class="alert alert-success">{{ session('contactus_success') }}</div>
@@ -375,21 +380,21 @@
                         class="col-lg-5 col-md-6 col-11 d-flex flex-column justify-content-center text-light contact-info">
                         <div class="mb-4 d-flex align-items-center">
                             <i class="fas fa-phone"></i>
-                            <div>
+                            <div class="moveup-animation delay-1">
                                 <h5>Phone</h5>
                                 <p>{{ $contact->number }}</p>
                             </div>
                         </div>
                         <div class="mb-4 d-flex align-items-center">
                             <i class="fas fa-envelope"></i>
-                            <div>
+                            <div class="moveup-animation delay-2">
                                 <h5>Email</h5>
                                 <p>{{ $contact->email }}</p>
                             </div>
                         </div>
                         <div class="d-flex align-items-center">
                             <i class="fas fa-map-marker-alt"></i>
-                            <div>
+                            <div class="moveup-animation delay-3">
                                 <h5>Address</h5>
                                 <p>{{ $contact->address }}</p>
                             </div>

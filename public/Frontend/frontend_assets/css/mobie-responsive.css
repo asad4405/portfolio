@@ -43,9 +43,14 @@
         font-size: 20px;
         margin-bottom: -8px;
     }
+
     .about-us-title.section-title{
         margin-bottom: 0 !important;
 
+    }
+
+    .testi-title {
+        font-size: 25px !important;
     }
 
     .about-line {
