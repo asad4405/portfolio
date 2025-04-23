@@ -796,3 +796,9 @@
 }
 
 /* ================== theme end ================ */
+.footerBg{
+    background: var(--tertiary-color);
+}
+.footerColor{
+    color: var(--primary-color);
+}

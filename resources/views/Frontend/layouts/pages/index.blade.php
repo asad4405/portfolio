@@ -99,7 +99,7 @@
                                 <h2 class="experience-title ">My Experience</h2>
                             </div>
 
-                            @foreach ($experiences as $key=> $experience)
+                            @foreach ($experiences as $key => $experience)
                                 <div class="card-custom ">
                                     <div class="date"><i class="{{ $experience->icon }}"></i></div>
                                     <div class="title">{{ $experience->exp_position }}</div>
@@ -378,23 +378,23 @@
                     <div class="col-lg-1 "></div>
                     <div
                         class="col-lg-5 col-md-6 col-11 d-flex flex-column justify-content-center text-light contact-info">
-                        <div class="mb-4 d-flex align-items-center">
+                        <div class="mb-4 d-flex align-items-center moveup-animation delay-1">
                             <i class="fas fa-phone"></i>
-                            <div class="moveup-animation delay-1">
+                            <div class="">
                                 <h5>Phone</h5>
                                 <p>{{ $contact->number }}</p>
                             </div>
                         </div>
-                        <div class="mb-4 d-flex align-items-center">
+                        <div class="mb-4 d-flex align-items-center moveup-animation delay-2">
                             <i class="fas fa-envelope"></i>
-                            <div class="moveup-animation delay-2">
+                            <div class="">
                                 <h5>Email</h5>
                                 <p>{{ $contact->email }}</p>
                             </div>
                         </div>
-                        <div class="d-flex align-items-center">
+                        <div class="d-flex align-items-center moveup-animation delay-3">
                             <i class="fas fa-map-marker-alt"></i>
-                            <div class="moveup-animation delay-3">
+                            <div class="">
                                 <h5>Address</h5>
                                 <p>{{ $contact->address }}</p>
                             </div>
