@@ -1,4 +1,7 @@
 @extends('Frontend.layouts.master')
+@section('title')
+    About
+@endsection
 @section('maincontent')
     <!-- Details Section -->
     <section>

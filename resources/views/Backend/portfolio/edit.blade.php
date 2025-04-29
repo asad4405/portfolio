@@ -1,10 +1,13 @@
 @extends('Backend.layouts.master')
+@section('title')
+    Edit Portfolio
+@endsection
 @section('maincontent')
     <!-- Default Basic Forms Start -->
     <div class="pd-20 card-box mb-30">
         <div class="clearfix">
             <div class="my-2 pull-left">
-                <h4 class="text-blue h4">Create Portfolio Section</h4>
+                <h4 class="text-blue h4">Edit Portfolio Section</h4>
             </div>
         </div>
         <form action="{{ route('admin.portfolio.update',$portfolio->id) }}" method="POST" enctype="multipart/form-data">

@@ -1,4 +1,7 @@
 @extends('Backend.layouts.master');
+@section('title')
+Dashboard
+@endsection
 @section('maincontent')
     <div class="xs-pd-20-10 pd-ltr-20">
         <div class="pb-20 title">

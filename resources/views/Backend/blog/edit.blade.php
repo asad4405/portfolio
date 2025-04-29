@@ -1,4 +1,7 @@
 @extends('Backend.layouts.master')
+@section('title')
+    Edit Blog
+@endsection
 @section('maincontent')
     <!-- Default Basic Forms Start -->
     <div class="pd-20 card-box mb-30">
@@ -86,7 +89,7 @@
             </div>
             <div class=" btn-list">
                 <button type="submit" class="btn btn-primary active focus">
-                    Update Blog 
+                    Update Blog
                 </button>
             </div>
         </form>

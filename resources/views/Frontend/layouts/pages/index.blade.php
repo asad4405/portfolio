@@ -1,4 +1,7 @@
 @extends('Frontend.layouts.master')
+@section('title')
+    Home
+@endsection
 @section('maincontent')
     <!-- ============== banner section =============== -->
     <section>

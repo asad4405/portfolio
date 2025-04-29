@@ -1,4 +1,7 @@
 @extends('Backend.layouts.master')
+@section('title')
+    Portfolio Category
+@endsection
 @section('maincontent')
     <!-- Simple Datatable start -->
     <div class="pd-20 card-box mb-30">

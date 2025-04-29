@@ -1,4 +1,7 @@
 @extends('Backend.layouts.master')
+@section('title')
+    Edit Counter
+@endsection
 @section('maincontent')
     <!-- Default Basic Forms Start -->
     <div class="pd-20 card-box mb-30">
