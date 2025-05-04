@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\SkillSubmitRequest;
 use App\Models\Skill;
 use Illuminate\Http\Request;
 
@@ -28,16 +29,15 @@ class SkillController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(SkillSubmitRequest $request)
     {
         $skill = new Skill();
-
-        $skill->name = $request->name;
-        $skill->icon = $request->icon;
-        $skill->color = $request->color;
+        $skill->name       = $request->name;
+        $skill->icon       = $request->icon;
+        $skill->color      = $request->color;
         $skill->percentage = $request->percentage;
-        $skill->position = $request->position;
-        $skill->status = $request->status;
+        $skill->position   = $request->position;
+        $skill->status     = $request->status;
 
         $skill->save();
         return redirect()->route('admin.skill.index')->with('success', 'Skill Added Success!');

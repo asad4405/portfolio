@@ -30,11 +30,14 @@ class PortfolioCategoryController extends Controller
      */
     public function store(Request $request)
     {
-        $portfolio_category = new PortfolioCategory();
+        $request->validate([
+            'category_name' => 'required'
+        ]);
 
+        $portfolio_category                = new PortfolioCategory();
         $portfolio_category->category_name = $request->category_name;
-        $portfolio_category->position = $request->position;
-        $portfolio_category->status = $request->status;
+        $portfolio_category->position      = $request->position;
+        $portfolio_category->status        = $request->status;
 
         $portfolio_category->save();
         return redirect()->route('admin.portfolio-category.index')->with('success', 'Portfolio Category Added Success!');

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\BlogSubmitRequest;
 use App\Models\Blog;
 use App\Models\BlogCategory;
 use Illuminate\Http\Request;
@@ -31,26 +32,16 @@ class BlogController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(BlogSubmitRequest $request)
     {
-        $request->validate([
-            'category_id' => 'required',
-            'title' => 'required|unique:blogs,title',
-            'short_details' => 'required',
-            'long_details' => 'required',
-            'date' => 'required',
-            'thumb_img' => 'required',
-            'main_img' => 'required',
-        ]);
-
-        $blog = new Blog();
-        $blog->category_id = $request->category_id;
-        $blog->title = $request->title;
-        $blog->slug = Str::slug($request->title);
+        $blog                = new Blog();
+        $blog->category_id   = $request->category_id;
+        $blog->title         = $request->title;
+        $blog->slug          = Str::slug($request->title);
         $blog->short_details = $request->short_details;
-        $blog->long_details = $request->long_details;
-        $blog->date = $request->date;
-        $blog->status = $request->status;
+        $blog->long_details  = $request->long_details;
+        $blog->date          = $request->date;
+        $blog->status        = $request->status;
 
         if ($request->file('thumb_img')) {
             $image = $request->file('thumb_img');
@@ -103,14 +94,14 @@ class BlogController extends Controller
             'date' => 'required',
         ]);
 
-        $blog = Blog::find($id);
-        $blog->category_id = $request->category_id;
-        $blog->title = $request->title;
-        $blog->slug = Str::slug($request->title);
+        $blog                = Blog::find($id);
+        $blog->category_id   = $request->category_id;
+        $blog->title         = $request->title;
+        $blog->slug          = Str::slug($request->title);
         $blog->short_details = $request->short_details;
-        $blog->long_details = $request->long_details;
-        $blog->date = $request->date;
-        $blog->status = $request->status;
+        $blog->long_details  = $request->long_details;
+        $blog->date          = $request->date;
+        $blog->status        = $request->status;
 
         if ($request->file('thumb_img')) {
             $image = $request->file('thumb_img');

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\EducationSubmitRequest;
 use App\Models\Education;
 use Illuminate\Http\Request;
 
@@ -28,14 +29,13 @@ class EducationController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(EducationSubmitRequest $request)
     {
-        $education = new Education();
-
-        $education->year_title = $request->year_title;
-        $education->course_name = $request->course_name;
+        $education                 = new Education();
+        $education->year_title     = $request->year_title;
+        $education->course_name    = $request->course_name;
         $education->institute_name = $request->institute_name;
-        $education->status = $request->status;
+        $education->status         = $request->status;
 
         $education->save();
         return redirect()->route('admin.education.index')->with('success','Education Added Successfull!');

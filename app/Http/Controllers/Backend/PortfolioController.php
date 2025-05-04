@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\PortfolioSubmitRequest;
 use App\Models\Portfolio;
 use App\Models\PortfolioCategory;
 use Illuminate\Http\Request;
@@ -32,17 +33,16 @@ class PortfolioController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(PortfolioSubmitRequest $request)
     {
         $portfolio = new Portfolio();
-
         $portfolio->category_id = $request->category_id;
-        $portfolio->title = $request->title;
-        $portfolio->slug = Str::slug($request->title);
-        $portfolio->details = $request->details;
-        $portfolio->link = $request->link;
-        $portfolio->position = $request->position;
-        $portfolio->status = $request->status;
+        $portfolio->title       = $request->title;
+        $portfolio->slug        = Str::slug($request->title);
+        $portfolio->details     = $request->details;
+        $portfolio->link        = $request->link;
+        $portfolio->position    = $request->position;
+        $portfolio->status      = $request->status;
 
         if ($request->file('image')) {
             $image = $request->file('image');

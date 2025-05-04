@@ -34,9 +34,9 @@ class BlogCategoryController extends Controller
             'category_name' => 'required',
         ]);
 
-        $blogcategory = new BlogCategory();
+        $blogcategory                = new BlogCategory();
         $blogcategory->category_name = $request->category_name;
-        $blogcategory->status = $request->status;
+        $blogcategory->status        = $request->status;
         $blogcategory->save();
         return redirect()->route('admin.blog-category.index')->with('success', 'Blog Category Added Success!');
     }
@@ -63,9 +63,9 @@ class BlogCategoryController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $blogcategory = BlogCategory::find($id);
+        $blogcategory                = BlogCategory::find($id);
         $blogcategory->category_name = $request->category_name;
-        $blogcategory->status = $request->status;
+        $blogcategory->status        = $request->status;
         $blogcategory->update();
         return redirect()->route('admin.blog-category.index')->with('success', 'Blog Category Updated Success!');
     }

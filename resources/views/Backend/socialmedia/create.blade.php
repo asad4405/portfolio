@@ -15,7 +15,7 @@
             <div class="form-group row">
                 <label class="col-sm-12 col-md-2 col-form-label">Title</label>
                 <div class="col-sm-12 col-md-10">
-                    <input class="form-control" name="title" type="text" value="{{ old('title') }}" />
+                    <input class="form-control @error('title') is-invalid @enderror" name="title" type="text" value="{{ old('title') }}" />
                     @error('title')
                         <span class="text-danger">{{ $message }}</span>
                     @enderror
@@ -24,7 +24,7 @@
             <div class="form-group row">
                 <label class="col-sm-12 col-md-2 col-form-label">Icon</label>
                 <div class="col-sm-12 col-md-10">
-                    <input class="form-control" name="icon" type="text" value="{{ old('icon') }}" />
+                    <input class="form-control @error('icon') is-invalid @enderror" name="icon" type="text" value="{{ old('icon') }}" />
                     @error('icon')
                         <span class="text-danger">{{ $message }}</span>
                     @enderror
@@ -33,7 +33,7 @@
             <div class="form-group row">
                 <label class="col-sm-12 col-md-2 col-form-label">Link</label>
                 <div class="col-sm-12 col-md-10">
-                    <input class="form-control" name="link" type="text" value="{{ old('link') }}" />
+                    <input class="form-control @error('link') is-invalid @enderror" name="link" type="text" value="{{ old('link') }}" />
                     @error('link')
                         <span class="text-danger">{{ $message }}</span>
                     @enderror
@@ -42,7 +42,7 @@
             <div class="form-group row">
                 <label class="col-sm-12 col-md-2 col-form-label">Color</label>
                 <div class="col-sm-12 col-md-10">
-                    <input class="form-control" name="color" type="color" value="{{ old('color') }}" />
+                    <input class="form-control @error('color') is-invalid @enderror" name="color" type="color" value="{{ old('color') }}" />
                     @error('color')
                         <span class="text-danger">{{ $message }}</span>
                     @enderror

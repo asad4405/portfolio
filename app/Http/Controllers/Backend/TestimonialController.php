@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\TestimonialSubmitRequest;
 use App\Models\Testimonial;
 use Illuminate\Http\Request;
 
@@ -28,15 +29,14 @@ class TestimonialController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(TestimonialSubmitRequest $request)
     {
         $testimonial = new Testimonial();
-
-        $testimonial->client_name = $request->client_name;
+        $testimonial->client_name   = $request->client_name;
         $testimonial->client_sector = $request->client_sector;
-        $testimonial->details = $request->details;
-        $testimonial->position = $request->position;
-        $testimonial->status = $request->status;
+        $testimonial->details       = $request->details;
+        $testimonial->position      = $request->position;
+        $testimonial->status        = $request->status;
 
         if ($request->file('image')) {
             $image = $request->file('image');
@@ -75,11 +75,11 @@ class TestimonialController extends Controller
     {
         $testimonial = Testimonial::find($id);
 
-        $testimonial->client_name = $request->client_name;
+        $testimonial->client_name   = $request->client_name;
         $testimonial->client_sector = $request->client_sector;
-        $testimonial->details = $request->details;
-        $testimonial->position = $request->position;
-        $testimonial->status = $request->status;
+        $testimonial->details       = $request->details;
+        $testimonial->position      = $request->position;
+        $testimonial->status        = $request->status;
 
         if ($request->file('image')) {
             $image = $request->file('image');

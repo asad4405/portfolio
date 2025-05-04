@@ -15,7 +15,7 @@
             <div class="form-group row">
                 <label class="col-sm-12 col-md-2 col-form-label">Company Name / Client Name</label>
                 <div class="col-sm-12 col-md-10">
-                    <input class="form-control" name="client_name" type="text" value="{{ old('client_name') }}" />
+                    <input class="form-control @error('client_name') is-invalid @enderror" name="client_name" type="text" value="{{ old('client_name') }}" />
                     @error('client_name')
                         <span class="text-danger">{{ $message }}</span>
                     @enderror
@@ -24,7 +24,7 @@
             <div class="form-group row">
                 <label class="col-sm-12 col-md-2 col-form-label"> Client Sector</label>
                 <div class="col-sm-12 col-md-10">
-                    <input class="form-control" name="client_sector" type="text" value="{{ old('client_sector') }}" />
+                    <input class="form-control @error('client_sector') is-invalid @enderror" name="client_sector" type="text" value="{{ old('client_sector') }}" />
                     @error('client_sector')
                         <span class="text-danger">{{ $message }}</span>
                     @enderror
@@ -33,7 +33,7 @@
             <div class="form-group row">
                 <label class="col-sm-12 col-md-2 col-form-label"> Details</label>
                 <div class="col-sm-12 col-md-10">
-                    <input class="form-control" name="details" type="text" value="{{ old('details') }}" />
+                    <input class="form-control @error('details') is-invalid @enderror" name="details" type="text" value="{{ old('details') }}" />
                     @error('details')
                         <span class="text-danger">{{ $message }}</span>
                     @enderror
@@ -42,7 +42,7 @@
             <div class="form-group row">
                 <label class="col-sm-12 col-md-2 col-form-label"> Image</label>
                 <div class="col-sm-12 col-md-10">
-                    <input class="form-control" name="image" type="file" />
+                    <input class="form-control @error('image') is-invalid @enderror" name="image" type="file" />
                     @error('image')
                         <span class="text-danger">{{ $message }}</span>
                     @enderror

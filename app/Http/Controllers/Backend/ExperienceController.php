@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\ExperienceSubmitRequest;
 use App\Models\Experience;
 use Illuminate\Http\Request;
 
@@ -28,14 +29,14 @@ class ExperienceController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(ExperienceSubmitRequest $request)
     {
-        $experience = new Experience();
-        $experience->icon = $request->icon;
+        $experience               = new Experience();
+        $experience->icon         = $request->icon;
         $experience->exp_position = $request->exp_position;
-        $experience->details = $request->details;
-        $experience->position = $request->position;
-        $experience->status = $request->status;
+        $experience->details      = $request->details;
+        $experience->position     = $request->position;
+        $experience->status       = $request->status;
 
         $experience->save();
         return redirect()->route('admin.experience.index')->with('success', 'Experience Added Success!');
@@ -64,7 +65,7 @@ class ExperienceController extends Controller
     public function update(Request $request, string $id)
     {
         $experience = Experience::find($id);
-        
+
         $experience->icon = $request->icon;
         $experience->exp_position = $request->exp_position;
         $experience->details = $request->details;

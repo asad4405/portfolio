@@ -15,7 +15,7 @@
             <div class="form-group row">
                 <label class="col-sm-12 col-md-2 col-form-label"> Name</label>
                 <div class="col-sm-12 col-md-10">
-                    <input class="form-control" name="name" type="text" value="{{ old('name') }}" />
+                    <input class="form-control @error('name') is-invalid @enderror" name="name" type="text" value="{{ old('name') }}" />
                     @error('name')
                         <span class="text-danger">{{ $message }}</span>
                     @enderror
@@ -24,7 +24,7 @@
             <div class="form-group row">
                 <label class="col-sm-12 col-md-2 col-form-label"> Icon</label>
                 <div class="col-sm-12 col-md-10">
-                    <input class="form-control" name="icon" type="text" value="{{ old('icon') }}" />
+                    <input class="form-control @error('icon') is-invalid @enderror" name="icon" type="text" value="{{ old('icon') }}" />
                     @error('icon')
                         <span class="text-danger">{{ $message }}</span>
                     @enderror
@@ -33,7 +33,7 @@
             <div class="form-group row">
                 <label class="col-sm-12 col-md-2 col-form-label"> Color</label>
                 <div class="col-sm-12 col-md-10">
-                    <input class="form-control" name="color" type="color" value="{{ old('color') }}" />
+                    <input class="form-control @error('color') is-invalid @enderror" name="color" type="color" value="{{ old('color') }}" />
                     @error('color')
                         <span class="text-danger">{{ $message }}</span>
                     @enderror
@@ -42,7 +42,7 @@
             <div class="form-group row">
                 <label class="col-sm-12 col-md-2 col-form-label"> Percentage</label>
                 <div class="col-sm-12 col-md-10">
-                    <input class="form-control" name="percentage" type="text" value="{{ old('percentage') }}" />
+                    <input class="form-control @error('percentage') is-invalid @enderror" name="percentage" type="text" value="{{ old('percentage') }}" />
                     @error('percentage')
                         <span class="text-danger">{{ $message }}</span>
                     @enderror

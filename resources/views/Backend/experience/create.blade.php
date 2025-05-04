@@ -15,7 +15,7 @@
             <div class="form-group row">
                 <label class="col-sm-12 col-md-2 col-form-label">Icon</label>
                 <div class="col-sm-12 col-md-10">
-                    <input class="form-control" name="icon" type="text" value="{{ old('icon') }}" />
+                    <input class="form-control @error('icon') is-invalid @enderror" name="icon" type="text" value="{{ old('icon') }}" />
                     @error('icon')
                         <span class="text-danger">{{ $message }}</span>
                     @enderror
@@ -24,7 +24,7 @@
             <div class="form-group row">
                 <label class="col-sm-12 col-md-2 col-form-label">Experience Position</label>
                 <div class="col-sm-12 col-md-10">
-                    <input class="form-control" name="exp_position" type="text" value="{{ old('exp_position') }}" required />
+                    <input class="form-control @error('exp_position') is-invalid @enderror" name="exp_position" type="text" value="{{ old('exp_position') }}"  />
                     @error('exp_position')
                         <span class="text-danger">{{ $message }}</span>
                     @enderror
@@ -33,7 +33,7 @@
             <div class="form-group row">
                 <label class="col-sm-12 col-md-2 col-form-label">Details</label>
                 <div class="col-sm-12 col-md-10">
-                    <input class="form-control" name="details" type="text" value="{{ old('details') }}" required />
+                    <input class="form-control" name="details" type="text" value="{{ old('details') }}"  />
                     @error('details')
                         <span class="text-danger">{{ $message }}</span>
                     @enderror

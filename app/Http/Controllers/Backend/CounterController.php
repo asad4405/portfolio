@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\CounterSubmitRequest;
 use App\Models\Counter;
 use Illuminate\Http\Request;
 use PHPUnit\Framework\Constraint\Count;
@@ -29,16 +30,14 @@ class CounterController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(CounterSubmitRequest $request)
     {
-        $counter = new Counter();
-
-        $counter->title = $request->title;
-        $counter->count = $request->count;
-        $counter->plus = $request->plus;
+        $counter           = new Counter();
+        $counter->title    = $request->title;
+        $counter->count    = $request->count;
+        $counter->plus     = $request->plus;
         $counter->position = $request->position;
-        $counter->status = $request->status;
-
+        $counter->status   = $request->status;
         $counter->save();
         return redirect()->route('admin.counter.index')->with('success', 'Counter Added Success!');
     }

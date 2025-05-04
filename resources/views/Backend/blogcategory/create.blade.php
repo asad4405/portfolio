@@ -18,7 +18,7 @@
             <div class="form-group row">
                 <label class="col-sm-12 col-md-2 col-form-label">Category Name</label>
                 <div class="col-sm-12 col-md-10">
-                    <input class="form-control" name="category_name" type="text" value="{{ old('category_name') }}" />
+                    <input class="form-control @error('category_name') is-invalid @enderror" name="category_name" type="text" value="{{ old('category_name') }}" />
                     @error('category_name')
                         <span class="text-danger">{{ $message }}</span>
                     @enderror
