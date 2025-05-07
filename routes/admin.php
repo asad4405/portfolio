@@ -12,6 +12,7 @@ use App\Http\Controllers\Backend\ExperienceController;
 use App\Http\Controllers\Backend\GeneralSettingController;
 use App\Http\Controllers\Backend\PortfolioCategoryController;
 use App\Http\Controllers\Backend\PortfolioController;
+use App\Http\Controllers\Backend\PreparationCategoryController;
 use App\Http\Controllers\Backend\SkillController;
 use App\Http\Controllers\Backend\SocialMediaController;
 use App\Http\Controllers\Backend\TestimonialController;
@@ -57,5 +58,7 @@ Route::middleware('auth')->group(function () {
     Route::resource('testimonial', TestimonialController::class, ['names' => 'admin.testimonial']);
     // skill
     Route::resource('skill', SkillController::class, ['names' => 'admin.skill']);
-    
+    // preparation category
+    Route::resource('preparation-category', PreparationCategoryController::class, ['names' => 'admin.preparation-category']);
+
 });

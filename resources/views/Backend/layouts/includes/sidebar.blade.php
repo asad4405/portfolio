@@ -181,6 +181,15 @@
                         </li>
                     </ul>
                 </li>
+                <li class="dropdown">
+                    <a href="javascript:;" class="dropdown-toggle">
+                        <span class="micon bi bi-journal-text"></span><span class="mtext">Preparation</span>
+                    </a>
+                    <ul class="submenu">
+                        <li><a href="{{ route('admin.preparation-category.index') }}">Preparation Category</a></li>
+                        <li><a href="">Preparation</a></li>
+                    </ul>
+                </li>
                 <li>
                     <div class="dropdown-divider"></div>
                 </li>
