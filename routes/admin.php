@@ -14,6 +14,7 @@ use App\Http\Controllers\Backend\PortfolioCategoryController;
 use App\Http\Controllers\Backend\PortfolioController;
 use App\Http\Controllers\Backend\PreparationCategoryController;
 use App\Http\Controllers\Backend\PreparationController;
+use App\Http\Controllers\Backend\RoutineController;
 use App\Http\Controllers\Backend\SkillController;
 use App\Http\Controllers\Backend\SocialMediaController;
 use App\Http\Controllers\Backend\TestimonialController;
@@ -61,7 +62,9 @@ Route::middleware('auth')->group(function () {
     Route::resource('admin/skill', SkillController::class, ['names' => 'admin.skill']);
     // preparation category
     Route::resource('admin/preparation-category', PreparationCategoryController::class, ['names' => 'admin.preparation-category']);
-    // preparation category
+    // routine
+    Route::resource('admin/routine', RoutineController::class, ['names' => 'admin.routine']);
+    // preparation
     Route::resource('admin/preparation', PreparationController::class, ['names' => 'admin.preparation']);
 
 });

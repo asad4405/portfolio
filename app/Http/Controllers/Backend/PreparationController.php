@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use App\Models\Preparation;
 use App\Models\PreparationCategory;
+use App\Models\Routine;
 use Illuminate\Http\Request;
 
 class PreparationController extends Controller
@@ -24,7 +25,8 @@ class PreparationController extends Controller
     public function create()
     {
         $preparation_categories = PreparationCategory::orderBy('position', 'ASC')->get();
-        return view('Backend.preparation.create',compact('preparation_categories'));
+        $routines = Routine::orderBy('position', 'ASC')->get();
+        return view('Backend.preparation.create',compact('preparation_categories', 'routines'));
     }
 
     /**
@@ -58,7 +60,8 @@ class PreparationController extends Controller
     {
         $preparation = Preparation::find($id);
         $preparation_categories = PreparationCategory::orderBy('position', 'ASC')->get();
-        return view('Backend.preparation.edit',compact('preparation', 'preparation_categories'));
+        $routines = Routine::orderBy('position', 'ASC')->get();
+        return view('Backend.preparation.edit',compact('preparation', 'preparation_categories', 'routines'));
     }
 
     /**

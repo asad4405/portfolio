@@ -187,6 +187,7 @@
                     </a>
                     <ul class="submenu">
                         <li><a href="{{ route('admin.preparation-category.index') }}">Preparation Category</a></li>
+                        <li><a href="{{ route('admin.routine.index') }}">Routine</a></li>
                         <li><a href="{{ route('admin.preparation.index') }}">Preparation</a></li>
                     </ul>
                 </li>

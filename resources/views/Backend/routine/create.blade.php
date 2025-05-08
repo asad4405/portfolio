@@ -1,44 +1,30 @@
 @extends('Backend.layouts.master')
 @section('title')
-    Create Preparation
+    Create Routine
 @endsection
 @section('maincontent')
     <!-- Default Basic Forms Start -->
     <div class="pd-20 card-box mb-30">
         <div class="clearfix">
             <div class="my-2 pull-left">
-                <h4 class="text-blue h4">Create Preparation Section</h4>
+                <h4 class="text-blue h4">Create Routine Section</h4>
             </div>
         </div>
         @if (session('success'))
             <div class="alert alert-success">{{ session('success') }}</div>
         @endif
-        <form action="{{ route('admin.preparation.store') }}" method="POST" enctype="multipart/form-data">
+        <form action="{{ route('admin.routine.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="form-group row">
-                <label class="col-sm-12 col-md-2 col-form-label">Category Name</label>
+                <label class="col-sm-12 col-md-2 col-form-label">Preparation Category Name</label>
                 <div class="col-sm-12 col-md-10">
-                    <select name="category_id" class="form-control">
-                        <option value="">Select Category</option>
-                        @foreach ($preparation_categories as $value)
-                            <option value="{{ $value->id }}">{{ $value->category_name }}</option>
+                    <select name="preparation_category_id" class="form-control">
+                        <option value="">Select Preparation Category</option>
+                        @foreach ($preparation_categories as $preparation_category)
+                            <option value="{{ $preparation_category->id }}">{{ $preparation_category->category_name }}</option>
                         @endforeach
                     </select>
-                    @error('category_id')
-                        <span class="text-danger">{{ $message }}</span>
-                    @enderror
-                </div>
-            </div>
-            <div class="form-group row">
-                <label class="col-sm-12 col-md-2 col-form-label">Routine Name</label>
-                <div class="col-sm-12 col-md-10">
-                    <select name="routine_id" class="form-control">
-                        <option value="">Select Routine</option>
-                        @foreach ($routines as $value)
-                            <option value="{{ $value->id }}">{{ $value->title }}</option>
-                        @endforeach
-                    </select>
-                    @error('routine_id')
+                    @error('preparation_category_id')
                         <span class="text-danger">{{ $message }}</span>
                     @enderror
                 </div>
@@ -78,7 +64,7 @@
             </div>
             <div class=" btn-list">
                 <button type="submit" class="btn btn-primary active focus">
-                    Add Preparation
+                    Add Routine
                 </button>
             </div>
         </form>

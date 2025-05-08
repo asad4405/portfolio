@@ -31,6 +31,20 @@
                 </div>
             </div>
             <div class="form-group row">
+                <label class="col-sm-12 col-md-2 col-form-label">Routine Name</label>
+                <div class="col-sm-12 col-md-10">
+                    <select name="routine_id" class="form-control">
+                        <option value="">Select Routine</option>
+                        @foreach ($routines as $value)
+                            <option @if ($value->id) selected @endif value="{{ $value->id }}">{{ $value->title }}</option>
+                        @endforeach
+                    </select>
+                    @error('routine_id')
+                        <span class="text-danger">{{ $message }}</span>
+                    @enderror
+                </div>
+            </div>
+            <div class="form-group row">
                 <label class="col-sm-12 col-md-2 col-form-label">Title</label>
                 <div class="col-sm-12 col-md-10">
                     <input class="form-control" name="title" type="text" value="{{ $preparation->title }}" />
