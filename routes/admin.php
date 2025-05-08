@@ -13,6 +13,7 @@ use App\Http\Controllers\Backend\GeneralSettingController;
 use App\Http\Controllers\Backend\PortfolioCategoryController;
 use App\Http\Controllers\Backend\PortfolioController;
 use App\Http\Controllers\Backend\PreparationCategoryController;
+use App\Http\Controllers\Backend\PreparationController;
 use App\Http\Controllers\Backend\SkillController;
 use App\Http\Controllers\Backend\SocialMediaController;
 use App\Http\Controllers\Backend\TestimonialController;
@@ -23,42 +24,44 @@ Route::get('/dashboard', [DashboardController::class, 'index'])->middleware(['au
 
 Route::middleware('auth')->group(function () {
     // banner
-    Route::resource('banner', BannerController::class, ['names' => 'admin.banner']);
+    Route::resource('admin/banner', BannerController::class, ['names' => 'admin.banner']);
 
     // about
-    Route::resource('/admin/about', AboutController::class, ['names' => 'admin.about']);
+    Route::resource('/admin/admin/about', AboutController::class, ['names' => 'admin.about']);
     // counter
-    Route::resource('/counter', CounterController::class, ['names' => 'admin.counter']);
+    Route::resource('/admin/counter', CounterController::class, ['names' => 'admin.counter']);
     // counter
-    Route::resource('/theme', ThemeController::class, ['names' => 'admin.theme']);
+    Route::resource('/admin/theme', ThemeController::class, ['names' => 'admin.theme']);
 
     // portfolio category
-    Route::resource('portfolio-category', PortfolioCategoryController::class, ['names' => 'admin.portfolio-category']);
+    Route::resource('admin/portfolio-category', PortfolioCategoryController::class, ['names' => 'admin.portfolio-category']);
     // portfolio
-    Route::resource('portfolio', PortfolioController::class, ['names' => 'admin.portfolio']);
+    Route::resource('admin/portfolio', PortfolioController::class, ['names' => 'admin.portfolio']);
     // blogs
     // blog category
-    Route::resource('blog-category', BlogCategoryController::class, ['names' => 'admin.blog-category']);
+    Route::resource('admin/blog-category', BlogCategoryController::class, ['names' => 'admin.blog-category']);
     // blog
-    Route::resource('blog', BlogController::class, ['names' => 'admin.blog']);
+    Route::resource('admin/blog', BlogController::class, ['names' => 'admin.blog']);
     // settings
-    Route::resource('generalsetting', GeneralSettingController::class, ['names' => 'admin.setting']);
+    Route::resource('admin/generalsetting', GeneralSettingController::class, ['names' => 'admin.setting']);
     // contact
-    Route::resource('contact', ContactController::class, ['names' => 'admin.setting.contact']);
+    Route::resource('admin/contact', ContactController::class, ['names' => 'admin.setting.contact']);
     // social media
-    Route::resource('social-media', SocialMediaController::class, ['names' => 'admin.setting.social-media']);
+    Route::resource('admin/social-media', SocialMediaController::class, ['names' => 'admin.setting.social-media']);
     // contact us list & show
-    Route::get('/contact-us/list', [ContactController::class, 'contactus_list'])->name('admin.contactus.list');
-    Route::get('/contact-us/show/{id}', [ContactController::class, 'contactus_show'])->name('admin.contactus.show');
+    Route::get('/admin/contact-us/list', [ContactController::class, 'contactus_list'])->name('admin.contactus.list');
+    Route::get('/admin/contact-us/show/{id}', [ContactController::class, 'contactus_show'])->name('admin.contactus.show');
     // education
-    Route::resource('education', EducationController::class, ['names' => 'admin.education']);
+    Route::resource('admin/education', EducationController::class, ['names' => 'admin.education']);
     // education
-    Route::resource('experience', ExperienceController::class, ['names' => 'admin.experience']);
+    Route::resource('admin/experience', ExperienceController::class, ['names' => 'admin.experience']);
     // testimonial
-    Route::resource('testimonial', TestimonialController::class, ['names' => 'admin.testimonial']);
+    Route::resource('admin/testimonial', TestimonialController::class, ['names' => 'admin.testimonial']);
     // skill
-    Route::resource('skill', SkillController::class, ['names' => 'admin.skill']);
+    Route::resource('admin/skill', SkillController::class, ['names' => 'admin.skill']);
     // preparation category
-    Route::resource('preparation-category', PreparationCategoryController::class, ['names' => 'admin.preparation-category']);
+    Route::resource('admin/preparation-category', PreparationCategoryController::class, ['names' => 'admin.preparation-category']);
+    // preparation category
+    Route::resource('admin/preparation', PreparationController::class, ['names' => 'admin.preparation']);
 
 });
