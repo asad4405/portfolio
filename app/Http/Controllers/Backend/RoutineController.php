@@ -84,4 +84,22 @@ class RoutineController extends Controller
         $routine->delete();
         return redirect()->route('admin.routine.index')->with('delete-success', 'Routine Deleted Success!');
     }
+
+    public function list()
+    {
+        $preparation_categories = PreparationCategory::where('status', 1)->orderBy('position')->get();
+        return view('Backend.preparation.list', compact('preparation_categories'));
+    }
+
+    public function update_status(Request $request, $id)
+    {
+        $routine = Routine::find($id);
+        if ($routine->status == 1) {
+            $routine->status = 0;
+        }else{
+            $routine->status = 1;
+        }
+        $routine->save();
+        return back();
+    }
 }

@@ -58,8 +58,8 @@
                 <label class="col-sm-12 col-md-2 col-form-label">Status</label>
                 <div class="col-sm-12 col-md-10">
                     <select class="custom-select col-12" name="status">
-                        <option @if($routine->status == 1) selected @endif value="1">Active</option>
-                        <option @if($routine->status == 0) selected @endif value="0">Detactive</option>
+                        <option @if($routine->status == 1) selected @endif value="1">Complete</option>
+                        <option @if($routine->status == 0) selected @endif value="0">Incomplete</option>
                     </select>
                 </div>
             </div>

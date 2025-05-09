@@ -64,7 +64,6 @@ Route::middleware('auth')->group(function () {
     Route::resource('admin/preparation-category', PreparationCategoryController::class, ['names' => 'admin.preparation-category']);
     // routine
     Route::resource('admin/routine', RoutineController::class, ['names' => 'admin.routine']);
-    // preparation
-    Route::resource('admin/preparation', PreparationController::class, ['names' => 'admin.preparation']);
-
+    Route::get('/admin/routine-list', [RoutineController::class, 'list'])->name('admin.routine.list');
+    Route::get('/admin/routine/up-date-status/{id}', [RoutineController::class, 'update_status'])->name('admin.routine.update-status');
 });
