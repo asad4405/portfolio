@@ -21,7 +21,7 @@ use App\Http\Controllers\Backend\TestimonialController;
 use App\Http\Controllers\Backend\ThemeController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/dashboard', [DashboardController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/admin/dashboard', [DashboardController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
     // banner

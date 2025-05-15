@@ -6,6 +6,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>{{ $generalsetting->name }} - @yield('title')</title>
+
+    {{-- seo --}}
+    <meta name="description"
+        content="Welcome to the personal portfolio of {{ $generalsetting->name }}, a professional software developer skilled in HTML, CSS, Bootstrap, Tailwind CSS, JavaScript, jQuery, AJAX, PHP, and Laravel. Explore my latest web development projects, coding skills, and contact details.">
+    <meta name="keywords"
+        content="{{ $generalsetting->name }}, Software Developer, Web Developer, Full Stack Developer, HTML, CSS, Bootstrap, Tailwind CSS, JavaScript, jQuery, AJAX, PHP, Laravel Developer, Laravel Blade, Web Application Developer, Portfolio, Personal Website">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="{{ url()->current() }}">
+
+    <meta property="og:title" content="Portfolio of {{ $generalsetting->name }} | Software Developer & Web Developer">
+    <meta property="og:description"
+        content="Explore the personal portfolio of {{ $generalsetting->name }}, a skilled software developer with expertise in HTML, CSS, Bootstrap, Tailwind CSS, JavaScript, jQuery, AJAX, PHP, and Laravel. Discover my latest projects and get in touch.">
+    <meta property="og:image" content="{{ asset($generalsetting->logo) }}">
+    <meta property="og:url" content="{{ url()->current() }}">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="en_US">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Md. Asaduzzaman | Software Developer & Laravel Expert">
+    <meta name="twitter:description"
+        content="Discover the portfolio of {{ $generalsetting->name }} — a software developer skilled in Laravel, PHP, JavaScript, Tailwind CSS, and more. View my work and connect with me.">
+    <meta name="twitter:image" content="{{ asset($generalsetting->logo) }}">
+    <meta name="twitter:image:alt" content="Portfolio image of {{ $generalsetting->name }}">
+
+    <meta name="author" content="{{ $generalsetting->name }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
     <link rel="stylesheet" type="text/css"
         href="{{ asset('public/Frontend/frontend_assets/bootstrap/css/bootstrap.css') }}" />
     <link rel="stylesheet" href="{{ asset('public/Frontend/frontend_assets/css/style.css') }}">
@@ -16,7 +45,8 @@
         integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="shortcut icon" href="{{ asset($generalsetting->favicon) }}" type="image/x-icon" />
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
@@ -36,7 +66,8 @@
                         <li class="nav-item"><a class="nav-link active" href="{{ route('index') }}">Home</a></li>
                         <li class="nav-item"><a class="nav-link" href="{{ route('about') }}">About</a></li>
                         <li class="nav-item"><a class="nav-link" href="{{ route('portfolio') }}">Portfolios</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{{ route('testimonial') }}">Testimonials</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{ route('testimonial') }}">Testimonials</a>
+                        </li>
                         <!-- Blog Dropdown (Hover) -->
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="{{ route('blog') }}">Blog</a>
@@ -169,6 +200,25 @@
                     localStorage.setItem('selectedTheme', themeClass);
                 }
             </script>
+            
+            {{-- seo js script --}}
+            <script type="application/ld+json">
+                {
+                  "@context": "https://schema.org",
+                  "@type": "Person",
+                  "name": "{{ $generalsetting->name }}",
+                  "url": "{{ url('/') }}",
+                  "sameAs": [
+                    "https://www.linkedin.com/in/md-asaduzzaman-00bb03287/",
+                    "https://github.com/asad4405/",
+                    "https://x.com/asad_4405"
+                  ],
+                  "jobTitle": "Software Developer",
+                  "description": "Professional software developer skilled in HTML, CSS, Bootstrap, Tailwind CSS, JavaScript, jQuery, AJAX, PHP, and Laravel.",
+                  "image": "{{ asset($generalsetting->logo) }}"
+                }
+            </script>
+
             <style>
                 @keyframes custom-spin {
                     from {
