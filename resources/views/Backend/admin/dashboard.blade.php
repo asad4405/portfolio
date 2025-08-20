@@ -80,7 +80,7 @@ Dashboard
 
     <div class="pb-10 card-box">
         <div class="mb-0 h5 pd-20">Recent Contact List</div>
-        <table class="table data-table nowrap">
+        <table class="table data-table table-responsive nowrap">
             <thead>
                 <tr>
                     <th class="table-plus">Name</th>

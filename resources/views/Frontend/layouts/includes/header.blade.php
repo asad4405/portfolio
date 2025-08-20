@@ -33,7 +33,7 @@
     <meta name="author" content="{{ $generalsetting->name }}">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-
+    {{-- @vite(['resources/css/app.css', 'resources/js/app.js']) --}}
 
     <link rel="stylesheet" type="text/css"
         href="{{ asset('public/Frontend/frontend_assets/bootstrap/css/bootstrap.css') }}" />
@@ -200,7 +200,7 @@
                     localStorage.setItem('selectedTheme', themeClass);
                 }
             </script>
-            
+
             {{-- seo js script --}}
             <script type="application/ld+json">
                 {

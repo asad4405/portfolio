@@ -38,19 +38,19 @@
             </div>
 
             <!-- counter section -->
-            <div class="py-3 counter-section">
-                <div class="container">
-                    <div class="text-center row">
-                        @foreach ($counters as $index => $value)
-                            <div class="col-6 col-md-3 moveup-animation">
-                                <h2 class="counter" data-target="{{ $value->count }}"
-                                    @if ($value->plus == 1) data-plus="true" @endif></h2>
-                                <p class="counter-title">{{ $value->title }}</p>
-                            </div>
-                        @endforeach
-                    </div>
-                </div>
-            </div>
+            <!--<div class="py-3 counter-section">-->
+            <!--    <div class="container">-->
+            <!--        <div class="text-center row">-->
+            <!--            @foreach ($counters as $index => $value)-->
+            <!--                <div class="col-6 col-md-3 moveup-animation">-->
+            <!--                    <h2 class="counter" data-target="{{ $value->count }}"-->
+            <!--                        @if ($value->plus == 1) data-plus="true" @endif></h2>-->
+            <!--                    <p class="counter-title">{{ $value->title }}</p>-->
+            <!--                </div>-->
+            <!--            @endforeach-->
+            <!--        </div>-->
+            <!--    </div>-->
+            <!--</div>-->
         </div>
     </section>
 
