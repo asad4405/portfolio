@@ -58,7 +58,7 @@
     <section id="aboutUs">
         <div class="container mt-5">
             <div class="about-me">
-                <h2 class="text-center about-us-title section-title moveup-animation">ABOUT ME</h2>
+                <h2 class="text-center about-us-title section-title moveup-animation">ABOUT ME Asad</h2>
                 <div class="row">
                     <div class="col-12">
                         <div class="about-image moveup-animation delay-0">
